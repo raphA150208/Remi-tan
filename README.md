@@ -19,6 +19,9 @@ $ bundle install
 $ rails db:create && rails db:migrate
 $ rails s
 ```
+## チェックシート
+https://docs.google.com/spreadsheets/d/1BFmp-oFvzIEcAvG0RDfgFlxHAE-W6GOyA3ocf2arPmc/edit?usp=sharing
+
 ## カタログ設計
 https://docs.google.com/spreadsheets/d/1ghGFwwXwujQm9lzCBicjZeW1eNFQxEbVqna4f9h_CEk/edit?usp=sharing
 
