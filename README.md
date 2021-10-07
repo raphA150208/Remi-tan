@@ -32,6 +32,6 @@ https://docs.google.com/spreadsheets/d/1DPzWraZhEss4cOuIBJoSHsS3bm0DmNiFxKZa0cRb
 https://cacoo.com/diagrams/Uhv3ELdfExBfqdI2/B0A61
 
 ## ER図
-![スクリーンショット 2021-10-07 1 58 07](https://user-images.githubusercontent.com/79513355/136249749-d0f1503f-4c3c-4186-ab51-8426f117e21b.png)
+![スクリーンショット 2021-10-07 15 47 59](https://user-images.githubusercontent.com/79513355/136333640-d1d17c1d-3e6b-48ec-94a3-9387a00ab604.png)
 ## 画面遷移図
 ![スクリーンショット 2021-10-06 0 50 16](https://user-images.githubusercontent.com/79513355/136060307-e13566df-f962-442a-8c28-0df0ebdd8f1d.png)
