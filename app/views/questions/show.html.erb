@@ -1,17 +1,28 @@
-<p>
-  <strong>Content:</strong>
-  <%= @question.content %>
-</p>
+<div class="container">
+  <div class="question-text">
+    <p>
+      <strong>Content:</strong>
+      <%= @question.content %>
+    </p>
 
-<p>
-  <strong>Sentence:</strong>
-  <%= @question.sentence %>
-</p>
+    <p>
+      <strong>Sentence:</strong>
+      <%= @question.sentence %>
+    </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @question.status %>
-</p>
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+    <p>
+      <strong>Status:</strong>
+      <%= @question.status %>
+    </p>
+  </div>
+  <p>回答一覧</p>
+  <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+  <div id="answers_area">
+    <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+    <%= render partial: 'answers/index', locals: { answers: @answers, question: @question } %>
+  </div>
+  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+  <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
+  <%= link_to 'Edit', edit_question_path(@question) %> |
+  <%= link_to 'Back', questions_path %>
+</div>
