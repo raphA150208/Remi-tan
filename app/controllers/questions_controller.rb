@@ -14,7 +14,13 @@ class QuestionsController < ApplicationController
 
   # GET /questions/new
   def new
-    @question = Question.new
+    @question = nil
+    if params[:question]
+      @question = Question.new(question_params)
+    else
+      @question = Question.new
+    end
+    @reminiscent_words = @question.reminiscent_words.build
   end
 
   # GET /questions/1/edit
@@ -69,6 +75,6 @@ class QuestionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def question_params
-    params.require(:question).permit(:content, :sentence, :status)
+    params.require(:question).permit(:content, :sentence, :status, reminiscent_words_attributes: [:keyword])
   end
 end
