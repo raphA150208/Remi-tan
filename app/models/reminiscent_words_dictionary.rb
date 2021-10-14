@@ -1,0 +1,2 @@
+class ReminiscentWordsDictionary < ApplicationRecord
+end

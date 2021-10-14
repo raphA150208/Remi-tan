@@ -1,10 +1,8 @@
 class AnswersController < ApplicationController
   before_action :set_question, only: [:create, :edit, :update]
   def create
-    # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
-    @question = Question.find(params[:question_id])
     @answer = @question.answers.build(answer_params)
-    # クライアント要求に応じてフォーマットを変更
+    @answer.user_id = current_user.id
     respond_to do |format|
       if @answer.save
         format.js { render :index }
@@ -43,7 +41,7 @@ class AnswersController < ApplicationController
   private
   # ストロングパラメーター
   def answer_params
-    params.require(:answer).permit(:question_id, :answer)
+    params.require(:answer).permit(:question_id, :comment)
   end
   def set_question
     @question = Question.find(params[:question_id])

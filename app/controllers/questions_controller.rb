@@ -15,6 +15,10 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+    # @reminiscentwords = Reminiscentwords.new
+    # @reminiscentwords = Reminiscentwords.new
+    # @reminiscentwords = Reminiscentwords.new
+    # @reminiscentwords = Reminiscentwords.new
   end
 
   # GET /questions/1/edit
@@ -23,15 +27,18 @@ class QuestionsController < ApplicationController
 
   # POST /questions or /questions.json
   def create
-    @question = Question.new(question_params)
-
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to @question, notice: "Question was successfully created." }
-        format.json { render :show, status: :created, location: @question }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
+    @question = current_user.questions.build(question_params)
+    if params[:back]
+      render :new
+    else
+      respond_to do |format|
+        if @question.save
+          format.html { redirect_to @question, notice: "Question was successfully created." }
+          format.json { render :show, status: :created, location: @question }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @question.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -60,12 +67,12 @@ class QuestionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def question_params
-      params.require(:question).permit(:content, :sentence, :status)
-    end
+  # Only allow a list of trusted parameters through.
+  def question_params
+    params.require(:question).permit(:content, :sentence, :status)
+  end
 end
