@@ -15,10 +15,6 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
-    # @reminiscentwords = Reminiscentwords.new
-    # @reminiscentwords = Reminiscentwords.new
-    # @reminiscentwords = Reminiscentwords.new
-    # @reminiscentwords = Reminiscentwords.new
   end
 
   # GET /questions/1/edit
