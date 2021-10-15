@@ -22,8 +22,12 @@
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status %>
+    <%= form.fields_for :reminiscent_words do |w| %>
+      <%= render "reminiscent_word_fields", f: w %>
+    <% end %>
+    <div class="links">
+        <%= link_to_add_association "連想ワードを追加", form, :reminiscent_words %>
+    </div>
   </div>
 
   <div class="actions">

@@ -1,0 +1,32 @@
+ja:
+  activerecord:
+    models:
+      blog: ブログ
+      user: ユーザー
+      post: 日常投稿
+      comment: コメント
+      group: グループ
+      Assign: アサイン
+    attributes:
+      blog:
+        title: タイトル
+        content: 内容
+      user:
+        title: タイトル
+        name: 名前
+        specification: ユーザーID
+        birthday: 誕生日
+        icon: プロフィール画像
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
+        password_change: パスワード変更
+      post:
+        event_on: 日付(date)
+        image: 画像(image)
+        post: 投稿
+      comment:
+        content: 内容
+        post: 日常投稿
