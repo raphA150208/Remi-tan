@@ -75,6 +75,6 @@ class QuestionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def question_params
-    params.require(:question).permit(:content, :sentence, :status, reminiscent_words_attributes: [:keyword])
+    params.require(:question).permit(:content, :sentence, :status, reminiscent_words_attributes: [:keyword, :_destroy])
   end
 end
