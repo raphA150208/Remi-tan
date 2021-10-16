@@ -1,0 +1,25 @@
+<h1>連想ワードで検索する</h1>
+<%= search_form_for @q, url: search_path do |f| %>
+  <%= search_field_tag "q[reminiscent_word_matches_all][]" %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
+
+<% if @search_word.present? %>
+  <h1>検索結果</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>しっくりくる言葉</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @results.each do |r| %>
+        <tr>
+          <td><%= r.answer_word %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
