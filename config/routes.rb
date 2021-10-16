@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+  get 'search', to: 'reminiscent_words_dictionaries#search'
 end
 
