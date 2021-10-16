@@ -1,0 +1,2 @@
+class ReminiscentWordsDictionariesController < ApplicationController
+end
