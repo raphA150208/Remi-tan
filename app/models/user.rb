@@ -9,4 +9,9 @@ class User < ApplicationRecord
       user.password = SecureRandom.alphanumeric()
     end
   end
+  def self.admin_guest
+    find_or_create_by!(name: '管理者ゲスト', email: 'admin_guest@example.com', admin: true) do |user|
+      user.password = SecureRandom.alphanumeric()
+    end
+  end
 end
