@@ -1,32 +1,47 @@
 ja:
   activerecord:
     models:
-      blog: ブログ
+      question: 質問投稿
       user: ユーザー
-      post: 日常投稿
-      comment: コメント
-      group: グループ
-      Assign: アサイン
+      answer: 回答
+      answer_word: しっくりくる言葉
+      reminiscent_word: 連想ワード
+      reminiscent_words_dictionary: 連想ワード辞書
     attributes:
-      blog:
-        title: タイトル
-        content: 内容
+      question:
+        content: 質問内容
+        sentence: 前後の文脈
+        created_at: 作成日
+        updated_at: 更新日
+        status: ステータス
       user:
-        title: タイトル
         name: 名前
-        specification: ユーザーID
-        birthday: 誕生日
-        icon: プロフィール画像
         email: メールアドレス
         current_password: 現在のパスワード
         password: パスワード
         password_confirmation: 確認用パスワード
         remember_me: ログインを記憶
         password_change: パスワード変更
-      post:
-        event_on: 日付(date)
-        image: 画像(image)
-        post: 投稿
-      comment:
-        content: 内容
-        post: 日常投稿
+      reminiscent_words_dictionary:
+        answer_word: しっくりくる言葉
+        reminiscent_word: 連想ワード
+        best_answer_flg: ベストアンサー
+        created_at: 作成日
+        updated_at: 更新日
+      reminiscent_word:
+        keyword: 連想ワード
+        question: 質問投稿
+        created_at: 作成日
+        updated_at: 更新日
+      answer:
+        comment: コメント
+        question: 質問投稿
+        user: ユーザー
+        created_at: 作成日
+        updated_at: 更新日
+      answer_word:
+        candidate: しっくりくる言葉候補
+        best_answer_flg: ベストアンサー
+        answer: 回答
+        created_at: 作成日
+        updated_at: 更新日
