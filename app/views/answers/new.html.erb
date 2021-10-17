@@ -1,23 +1,49 @@
-<%= form_with(model: @answer, local: true, url: new_question_answer_path ) do |a| %>
-    <div class="field question-content">
-    <%= a.label "質問内容" %>
-    <%= a.text_area :content, size: "60x10" %>
-  </div>
+<div class="container">
+  <div class="question-text">
+    <p>
+      <strong>質問内容</strong>
+      <%= @question.content %>
+    </p>
 
-  <div class="field question-content">
-    <%= a.label "前後の文脈" %>
-    <%= a.text_area :sentence, size: "60x10" %>
-  </div>
+    <p>
+      <strong>前後の文脈</strong>
+      <%= @question.sentence %>
+    </p>
 
-  <div class="field">
-    <%= a.fields_for :answer_words do |aw| %>
-      <%= render "answer_word_fields", f: aw %>
-    <% end %>
-    <div class="links">
-        <%= link_to_add_association "しっくりくる言葉を回答する", a, :answer_words %>
-    </div>
+    <p>
+      <strong>連想ワード</strong>
+      <% @question.reminiscent_words.each do |reminiscent_word| %>
+        <tr class="reiniscent_words_list">
+          <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
+        </tr>
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Status:</strong>
+      <%= @question.status %>
+    </p>
   </div>
-    <div class="actions">
-        <%= a.submit %>
+  <p>回答一覧</p>
+  <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+  <div id="answers_area">
+    <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+    <%= render partial: 'answers/index', locals: { answers: @answers, question: @question } %>
+  </div>
+  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+  <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
+
+  <%= form_with(model: @answer, local: true, url: new_question_answer_path ) do |a| %>
+    <div class="field">
+      <%= a.fields_for :answer_words do |aw| %>
+        <%= render "answer_word_fields", f: aw %>
+      <% end %>
+      <div class="links">
+          <%= link_to_add_association "追加する", a, :answer_words %>
+      </div>
     </div>
-<% end %>
+      <div class="actions">
+          <%= a.submit '回答する' %>
+      </div>
+  <% end %>
+</div>

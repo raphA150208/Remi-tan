@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
   before_action :set_question, only: [:new, :create, :edit, :update]
   def new
+    @answers = @question.answers
     @answer = @question.answers.build
     @answer_words = @answer.answer_words.build
   end
