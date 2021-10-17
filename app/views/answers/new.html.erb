@@ -1,0 +1,23 @@
+<%= form_with(model: @answer, local: true, url: new_question_answer_path ) do |a| %>
+    <div class="field question-content">
+    <%= a.label "質問内容" %>
+    <%= a.text_area :content, size: "60x10" %>
+  </div>
+
+  <div class="field question-content">
+    <%= a.label "前後の文脈" %>
+    <%= a.text_area :sentence, size: "60x10" %>
+  </div>
+
+  <div class="field">
+    <%= a.fields_for :answer_words do |aw| %>
+      <%= render "answer_word_fields", f: aw %>
+    <% end %>
+    <div class="links">
+        <%= link_to_add_association "しっくりくる言葉を回答する", a, :answer_words %>
+    </div>
+  </div>
+    <div class="actions">
+        <%= a.submit %>
+    </div>
+<% end %>
