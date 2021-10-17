@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="top-content">
+    <div class="top_title">
+    <h1>Remi-tan</h1>
+    <h4></h4>
+    Remi-tanは文章を書く時に遭遇する言葉の悩み解決をサポートします。
+    </div>
+  </div>
+  <br>
+  <div class="middle-content">
+    <div class="contents col-md-6">
+      <div class="top_explain">
+        大切な人に手紙を書く、取引先に商談のメールをする、、、<br>
+        そんな文章を書いている時に、自分のイメージをうまく表現できる"しっくりくる言葉"が思いつかない、<br>
+        さらには、探しても見つからない、、、そんな場面に遭遇したことがありませんか？<br>
+        Remi-tanはユーザー同士で助け合って、あなたが探している"しっくりくる言葉”を探し出すことを目的としたサービスです。<br>
+        <br>
+      </div>
+    </div>
+    <div class="contents col-md-6">
+      <% unless user_signed_in? %>
+        <ul class="top_link">
+          <li><%= link_to "ログイン", new_user_session_path %></li><br>
+          <li><%= link_to "ユーザー登録", new_user_registration_path %></li><br>
+          <li><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %></li><br>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
