@@ -4,4 +4,5 @@ class Answer < ApplicationRecord
   validates :comment, presence: true
   belongs_to :user
   has_many :answer_words
+  accepts_nested_attributes_for :answer_words, allow_destroy: true
 end

@@ -1,5 +1,11 @@
 class AnswersController < ApplicationController
-  before_action :set_question, only: [:create, :edit, :update]
+  before_action :set_question, only: [:new, :create, :edit, :update]
+  def new
+    @answers = @question.answers
+    @answer = @question.answers.build
+    @answer_words = @answer.answer_words.build
+  end
+
   def create
     @answer = @question.answers.build(answer_params)
     @answer.user_id = current_user.id
@@ -39,11 +45,11 @@ class AnswersController < ApplicationController
     end
   end
   private
-  # ストロングパラメーター
-  def answer_params
-    params.require(:answer).permit(:question_id, :comment)
-  end
   def set_question
     @question = Question.find(params[:question_id])
+  end
+
+  def answer_params
+    params.require(:answer).permit(:question_id, :comment,answer_words_attribyutes: [:id, :candidate, :_destroy])
   end
 end

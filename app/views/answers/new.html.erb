@@ -32,5 +32,18 @@
   </div>
   <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
   <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
-  <%= link_to 'Edit', edit_question_path(@question) %>
+
+  <%= form_with(model: @answer, local: true, url: new_question_answer_path ) do |a| %>
+    <div class="field">
+      <%= a.fields_for :answer_words do |aw| %>
+        <%= render "answer_word_fields", f: aw %>
+      <% end %>
+      <div class="links">
+          <%= link_to_add_association "追加する", a, :answer_words %>
+      </div>
+    </div>
+      <div class="actions">
+          <%= a.submit '回答する' %>
+      </div>
+  <% end %>
 </div>
