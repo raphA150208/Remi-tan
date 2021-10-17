@@ -3,9 +3,9 @@
 <table>
   <thead>
     <tr>
+      <th>Status</th>
       <th>Content</th>
       <th>Sentence</th>
-      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,9 +13,9 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr>
+        <td><%= question.status %></td>
         <td><%= question.content %></td>
         <td><%= question.sentence %></td>
-        <td><%= question.status %></td>
         <td><%= link_to '詳細', question %></td>
         <td><%= link_to '回答する', new_question_answer_path(question) %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
