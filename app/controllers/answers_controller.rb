@@ -11,6 +11,7 @@ class AnswersController < ApplicationController
     @answer.user_id = current_user.id
     respond_to do |format|
       if @answer.save
+        # binding.pry
         format.js { render :index }
       else
         format.html { redirect_to question_path(@question), notice: 'コメントできませんでした...' }

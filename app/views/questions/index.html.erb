@@ -1,5 +1,11 @@
-<h1>Questions</h1>
-
+<h1>質問一覧</h1>
+<div class="input-group">
+  <%= form_with model: @question, method: :get, local: true do |form| %>
+    <%= form.select :search_status, Question.statuses.keys %>
+    <%= form.submit '絞り込み', name: 'search' %>
+    <%= link_to '解除', questions_path %>
+  <% end %>
+</div>
 <table>
   <thead>
     <tr>

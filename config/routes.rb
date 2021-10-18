@@ -17,5 +17,6 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
   get 'search', to: 'reminiscent_words_dictionaries#search'
+  get 'result', to: 'questions#result'
 end
 
