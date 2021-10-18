@@ -1,5 +1,9 @@
 <div class="container">
   <div class="question-text">
+     <p>
+      <%= @question.status %>
+    </p>
+
     <p>
       <strong>質問内容</strong>
       <%= @question.content %>
@@ -11,17 +15,11 @@
     </p>
 
     <p>
-      <strong>連想ワード</strong>
       <% @question.reminiscent_words.each do |reminiscent_word| %>
         <tr class="reiniscent_words_list">
           <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
         </tr>
       <% end %>
-    </p>
-
-    <p>
-      <strong>Status:</strong>
-      <%= @question.status %>
     </p>
   </div>
   <p>回答一覧</p>

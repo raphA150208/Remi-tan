@@ -1,6 +1,10 @@
 <div class="container">
   <div class="question-text">
     <p>
+      <%= @question.status %>
+    </p>
+
+    <p>
       <strong>質問内容</strong>
       <%= @question.content %>
     </p>
@@ -11,7 +15,6 @@
     </p>
 
     <p>
-      <strong>連想ワード</strong>
       <% @question.reminiscent_words.each do |reminiscent_word| %>
         <tr class="reiniscent_words_list">
           <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
@@ -19,18 +22,20 @@
       <% end %>
     </p>
 
-    <p>
-      <strong>Status:</strong>
-      <%= @question.status %>
-    </p>
   </div>
   <p>回答一覧</p>
+  <% if @answers.present? %>
+    <% @answers.each do |answers| %>
+    <%# binding.pry %>
+      <tr class="answers_list">
+        <td class="answers_row"><%= answers.answer_words.candidate %></td>
+      </tr>
+    <% end %>
+  <% end %>
   <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
   <div id="answers_area">
     <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
     <%= render partial: 'answers/index', locals: { answers: @answers, question: @question } %>
   </div>
-  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-  <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
-  <%= link_to 'Edit', edit_question_path(@question) %>
+  <%= link_to '変更する', edit_question_path(@question) %>
 </div>

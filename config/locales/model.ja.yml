@@ -15,7 +15,7 @@ ja:
         updated_at: 更新日
         status: ステータス
       user:
-        name: 名前
+        name: ユーザー名
         email: メールアドレス
         current_password: 現在のパスワード
         password: パスワード
