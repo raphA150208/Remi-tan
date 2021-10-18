@@ -3,21 +3,22 @@
 <table>
   <thead>
     <tr>
+      <%# <th>Status</th>
       <th>Content</th>
       <th>Sentence</th>
-      <th>Status</th>
-      <th colspan="3"></th>
+      <th colspan="3"></th> %>
     </tr>
   </thead>
 
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= question.content %></td>
-        <td><%= question.sentence %></td>
         <td><%= question.status %></td>
+        <td><%= question.content %></td>
         <td><%= link_to '詳細', question %></td>
         <td><%= link_to '回答する', new_question_answer_path(question) %></td>
+        <td><%= "投稿日時 : " + question.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= question.user.name %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
