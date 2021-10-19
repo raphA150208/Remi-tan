@@ -21,6 +21,11 @@
       <tr>
         <td><%= question.status %></td>
         <td><%= question.content %></td>
+        <% question.reminiscent_words.each do |reminiscent_word| %>
+        <tr class="reiniscent_words_list">
+          <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
+        </tr>
+      <% end %>
         <% if question.user == current_user %>
           <td><%= link_to '詳細', question %></td>
         <% else %>

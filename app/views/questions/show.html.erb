@@ -21,7 +21,8 @@
         </tr>
       <% end %>
     </p>
-
+    <%= link_to '変更する', edit_question_path(@question) %>
+    <%= link_to '削除する', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
   <p>回答一覧</p>
   <% if @question.answers.present? %>
@@ -38,5 +39,4 @@
     <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
     <%= render partial: 'answers/index', locals: { answers: @question.answers, question: @question } %>
   </div>
-  <%= link_to '変更する', edit_question_path(@question) %>
 </div>
