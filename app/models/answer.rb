@@ -3,6 +3,6 @@ class Answer < ApplicationRecord
   belongs_to :question
   validates :comment, presence: true
   belongs_to :user
-  has_many :answer_words
+  has_many :answer_words, dependent: :destroy
   accepts_nested_attributes_for :answer_words, allow_destroy: true
 end
