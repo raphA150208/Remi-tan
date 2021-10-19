@@ -10,7 +10,6 @@ class AnswersController < ApplicationController
 
   def create
     @answer = @question.answers.build(answer_params)
-    # binding.pry
     @answer.user_id = current_user.id
     respond_to do |format|
       if @answer.save

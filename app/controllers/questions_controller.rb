@@ -3,7 +3,6 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!
   def index
     @questions = Question.all.order(created_at: :desc)
-    # binding.pry
     if  params[:search_status].present?
       @questions = Question.search_status(params[:search_status])
     end
