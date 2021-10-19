@@ -1,10 +1,38 @@
 <div class="container">
   <div class="row">
     <div class="user_icon">
-      <h3 class="user_title"><%= @user.name %></h3>
+      <h3 class="user_title"><%= current_user.name %></h3>
     </div>
     <div class="user_edit">
       <%= link_to 'ユーザー情報編集', edit_user_registration_path ,class:"btn btn-default btn-xs" %>
     </div>
   </div>
+  <h2>質問</h2>
+  <% @my_questions.each do |my_question| %>
+    <tr>
+      <td><%= my_question.status %></td>
+      <td><%= my_question.content %></td>
+      <% my_question.reminiscent_words.each do |reminiscent_word| %>
+        <tr class="reiniscent_words_list">
+          <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
+        </tr>
+      <% end %>
+      <td><%= link_to '詳細', my_question %></td>
+      <td><%= "投稿日時 : " + my_question.created_at.strftime('%Y/%m/%d') %></td>
+    </tr>
+  <% end %>
+  <h2>回答</h2>
+  <% @my_answer_questions.each do |my_answer_question| %>
+    <tr>
+      <td><%= my_answer_question.status %></td>
+      <td><%= my_answer_question.content %></td>
+      <% my_answer_question.reminiscent_words.each do |reminiscent_word| %>
+        <tr class="reiniscent_words_list">
+          <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
+        </tr>
+      <% end %>
+      <td><%= link_to '詳細', my_answer_question %></td>
+      <td><%= "投稿日時 : " + my_answer_question.created_at.strftime('%Y/%m/%d') %></td>
+    </tr>
+  <% end %>
 </div>
