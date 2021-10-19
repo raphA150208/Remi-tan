@@ -26,10 +26,10 @@
   <p>回答一覧</p>
   <% if @question.answers.present? %>
     <% @question.answers.each do |answer| %>
-    <% answer.answer_words.each do |answer_word| %>
-      <tr class="answers_list">
-        <td class="answers_row"><%= answer_word.candidate %></td>
-      </tr>
+      <% answer.answer_words.each do |answer_word| %>
+        <tr class="answers_list">
+          <td class="answers_row"><%= answer_word.candidate %></td>
+        </tr>
       <% end %>
     <% end %>
   <% end %>

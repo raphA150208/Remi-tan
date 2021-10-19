@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   end
   get 'search', to: 'reminiscent_words_dictionaries#search'
   get 'result', to: 'questions#result'
+  post 'questions/:question_id/answers/new', to: 'answers#create'
 end
 
