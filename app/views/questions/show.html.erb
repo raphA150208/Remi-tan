@@ -21,21 +21,22 @@
         </tr>
       <% end %>
     </p>
-
+    <%= link_to '変更する', edit_question_path(@question) %>
+    <%= link_to '削除する', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
   <p>回答一覧</p>
-  <% if @answers.present? %>
-    <% @answers.each do |answers| %>
-    <%# binding.pry %>
-      <tr class="answers_list">
-        <td class="answers_row"><%= answers.answer_words.candidate %></td>
-      </tr>
+  <% if @question.answers.present? %>
+    <% @question.answers.each do |answer| %>
+      <% answer.answer_words.each do |answer_word| %>
+        <tr class="answers_list">
+          <td class="answers_row"><%= answer_word.candidate %></td>
+        </tr>
+      <% end %>
     <% end %>
   <% end %>
   <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
   <div id="answers_area">
     <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
-    <%= render partial: 'answers/index', locals: { answers: @answers, question: @question } %>
+    <%= render partial: 'answers/index', locals: { answers: @question.answers, question: @question } %>
   </div>
-  <%= link_to '変更する', edit_question_path(@question) %>
 </div>

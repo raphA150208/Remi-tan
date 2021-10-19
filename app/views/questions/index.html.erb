@@ -1,5 +1,11 @@
-<h1>Questions</h1>
-
+<h1>質問一覧</h1>
+<div class="input-group">
+  <%= form_with model: @question, method: :get, local: true do |form| %>
+    <%= form.select :search_status, Question.statuses.keys %>
+    <%= form.submit '絞り込み', name: 'search' %>
+    <%= link_to '解除', questions_path %>
+  <% end %>
+</div>
 <table>
   <thead>
     <tr>
@@ -15,12 +21,18 @@
       <tr>
         <td><%= question.status %></td>
         <td><%= question.content %></td>
-        <td><%= link_to '詳細', question %></td>
-        <td><%= link_to '回答する', new_question_answer_path(question) %></td>
+        <% question.reminiscent_words.each do |reminiscent_word| %>
+          <tr class="reiniscent_words_list">
+            <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
+          </tr>
+        <% end %>
+        <% if question.user == current_user %>
+          <td><%= link_to '詳細', question %></td>
+        <% else %>
+          <td><%= link_to '回答する', new_question_answer_path(question) %></td>
+        <% end %>
         <td><%= "投稿日時 : " + question.created_at.strftime('%Y/%m/%d') %></td>
         <td><%= question.user.name %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

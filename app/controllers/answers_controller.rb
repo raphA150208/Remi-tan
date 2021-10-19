@@ -3,20 +3,25 @@ class AnswersController < ApplicationController
   def new
     @answers = @question.answers
     @answer = @question.answers.build
-    @answer_words = @answer.answer_words.build
+    # 3.times{
+      @answer_words = @answer.answer_words.build
+    # }
   end
 
   def create
     @answer = @question.answers.build(answer_params)
+    # binding.pry
     @answer.user_id = current_user.id
     respond_to do |format|
       if @answer.save
+        @answer_words
         format.js { render :index }
       else
         format.html { redirect_to question_path(@question), notice: 'コメントできませんでした...' }
       end
     end
   end
+
   def edit
     @answer = @question.answers.find(params[:id])
     respond_to do |format|
@@ -50,6 +55,6 @@ class AnswersController < ApplicationController
   end
 
   def answer_params
-    params.require(:answer).permit(:question_id, :comment,answer_words_attribyutes: [:id, :candidate, :_destroy])
+    params.require(:answer).permit(:question_id, :comment, answer_words_attributes: [:id, :candidate, :_destroy])
   end
 end

@@ -2,12 +2,16 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
   def index
-    @questions = Question.all
+    @questions = Question.all.order(created_at: :desc)
+    # binding.pry
+    if  params[:search_status].present?
+      @questions = Question.search_status(params[:search_status])
+    end
   end
 
   def show
-    @answers = @question.answers
-    @answer = @question.answers.build
+    # @answers = @question.answers
+    # @answer = @question.answers.build
     # @answer_shows = @question.answers.find(params[:id])
     # @answer_words = @answer_show.answer_words
   end
