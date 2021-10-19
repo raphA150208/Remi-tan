@@ -1,18 +1,28 @@
 <ul>
   <% answers.each do |answer| %>
     <% if answer.id.present? %>
-        <div class="answer-comment" id ="this_answer_<%= answer.id %>"></div>
+      <div class="answer-comment" id ="this_answer_<%= answer.id %>"></div>
         <label>しっくりくる言葉候補</label>
         <% answer.answer_words.each do |answer_word| %>
-            <p><%= answer_word.candidate %></p>
+        <p><%= answer_word.id %></p>
+          <p><%= answer_word.candidate %></p>
+          <% if current_user == @question.user %>
+          <p>質問id:<%= @question.id %></p>
+            <%= form_with( model: answer_word, local: true, url: select_best_answer_path ) do |ba| %>
+              <div class="best_answer">
+                <%= ba.hidden_field :id %>
+                <%= ba.submit 'ベストアンサー' %>
+              </div>
+            <% end %>
+          <% end %>
         <% end %>
-        <label>コメント</label>
-        <p><%= answer.comment %></p>
-        <% if current_user == answer.user %>
-          <p><%= link_to "コメント編集", edit_question_answer_path(question, answer), remote: true %></p>
-          <p><%= link_to "コメント削除", question_answer_path(answer.question_id, answer.id), method: :delete, remote: true,
-                                          data: { confirm: "本当に削除しますか?"} %></p>
-        <% end %>
+      <label>コメント</label>
+      <p><%= answer.comment %></p>
+      <% if current_user == answer.user %>
+        <p><%= link_to "コメント編集", edit_question_answer_path(question, answer), remote: true %></p>
+        <p><%= link_to "コメント削除", question_answer_path(answer.question_id, answer.id), method: :delete, remote: true,
+                                        data: { confirm: "本当に削除しますか?"} %></p>
+      <% end %>
     <% end %>
   <% end %>
 </ul>

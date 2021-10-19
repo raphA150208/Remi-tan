@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   get 'search', to: 'reminiscent_words_dictionaries#search'
   get 'result', to: 'questions#result'
   post 'questions/:question_id/answers/new', to: 'answers#create'
+  patch 'select_best_answer', to: 'answer_words#select_best_answer'
 end
 
