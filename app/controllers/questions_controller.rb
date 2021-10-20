@@ -9,6 +9,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    # @answer = @question.answers.find(params[:id])
+    @answer_word = AnswerWord.new
   end
 
   def new

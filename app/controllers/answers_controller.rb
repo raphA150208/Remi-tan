@@ -3,9 +3,7 @@ class AnswersController < ApplicationController
   def new
     @answers = @question.answers
     @answer = @question.answers.build
-    # 3.times{
-      @answer_words = @answer.answer_words.build
-    # }
+    @answer_words = @answer.answer_words.build
   end
 
   def create

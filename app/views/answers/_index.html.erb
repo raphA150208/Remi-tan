@@ -8,9 +8,10 @@
           <p><%= answer_word.candidate %></p>
           <% if current_user == @question.user %>
           <p>質問id:<%= @question.id %></p>
-            <%= form_with( model: answer_word, local: true, url: select_best_answer_path ) do |ba| %>
+            <%= form_with( model: @answer_word, local: true, url: question_answer_answer_words_path ) do |ba| %>
               <div class="best_answer">
                 <%= ba.hidden_field :id %>
+                <%# <% binding.pry %> %>
                 <%= ba.submit 'ベストアンサー' %>
               </div>
             <% end %>

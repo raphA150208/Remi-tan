@@ -10,15 +10,17 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show]
   resources :questions do
-    resources :answers
+    resources :answers, only: [:new, :create, :edit, :destroy, :update] do
+      resources :answer_words, only: [:create]
+    end
   end
+
   root 'tops#top'
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
   get 'search', to: 'reminiscent_words_dictionaries#search'
   get 'result', to: 'questions#result'
-  post 'questions/:question_id/answers/new', to: 'answers#create'
-  patch 'select_best_answer', to: 'answer_words#select_best_answer'
+  post 'questions/:id/answers/new', to: 'answers#create'
 end
 
