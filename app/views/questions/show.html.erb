@@ -23,8 +23,10 @@
         </tr>
       <% end %>
     </p>
-    <%= link_to '変更する', edit_question_path(@question) %>
-    <%= link_to '削除する', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% if @question.user_id == current_user.id %>
+      <%= link_to '変更する', edit_question_path(@question) %>
+      <%= link_to '削除する', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </div>
   <p>回答一覧</p>
   <% if @question.answers.present? %>
