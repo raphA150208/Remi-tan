@@ -1,27 +1,26 @@
 class AnswerWordsController < ApplicationController
-  # before_action :set_answer_word, only: %i[ select_best_answer ]
 
-  def create
+  def update
     @answer_word = AnswerWord.find(params[:id])
     #ベストアンサーを選択
     @answer_word.best_answer_flg = true
     #アンサーワード更新
-    @answer_word.update
+    @answer_word.save
     #ベストアンサーのしっくりくる言葉と紐付いた回答を代入
-    @answer = Answer.find(@answer_word.answer_word_id)
+    @answer = Answer.find(@answer_word.answer_id)
     #@answerに紐付いた質問を代入
-    binding.pry
+    # binding.pry
     @question = Question.find(@answer.question_id)
     #質問のステータスを解決済(1)にする
     @question.status = 1
     #質問データ更新
-    @question.update
+    @question.save
     #@questionに紐付いた連想ワードを代入
     @reminiscent_words = @question.reminiscent_words
     #@answerに紐付いたしっくりくる言葉を代入
     @answer_words = @answer.answer_words
     #nil宣言
-    @reminiscent_words_dictionaries = nil
+    @reminiscent_words_dictionaries = []
     #連想ワード(keyword)としっくりくる言葉候補(candidate)から連想ワード辞書テーブルの連想ワード(reminiscent_word)としっくりくる言葉候補(answer_word)を作って保存する
     @reminiscent_words.each{ |rw|
         @answer_words.each{ |aw|
@@ -43,7 +42,4 @@ class AnswerWordsController < ApplicationController
     # 質問詳細画面へ遷移する処理
   end
 
-  private
-  def set_answer_word
-  end
 end

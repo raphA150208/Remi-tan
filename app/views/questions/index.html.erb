@@ -8,15 +8,6 @@
   <% end %>
 </div>
 <table>
-  <thead>
-    <tr>
-      <%# <th>Status</th>
-      <th>Content</th>
-      <th>Sentence</th>
-      <th colspan="3"></th> %>
-    </tr>
-  </thead>
-
   <tbody>
     <% @questions.each do |question| %>
       <tr>
@@ -27,7 +18,7 @@
             <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
           </tr>
         <% end %>
-        <% if question.user == current_user %>
+        <% if question.user == current_user || question.status == "解決済" %>
           <td><%= link_to '詳細', question %></td>
         <% else %>
           <td><%= link_to '回答する', new_question_answer_path(question) %></td>

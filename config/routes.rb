@@ -10,11 +10,9 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show]
   resources :questions do
-    resources :answers, only: [:new, :create, :edit, :destroy, :update] do
-      resources :answer_words, only: [:create]
-    end
+    resources :answers, only: [:new, :create, :edit, :destroy, :update]
   end
-
+  resources :answer_words, only: [:update]
   root 'tops#top'
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
