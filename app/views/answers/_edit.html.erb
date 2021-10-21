@@ -10,10 +10,19 @@
     </div>
   <% end %>
   <div class="field">
+    <%= form.label "しっくりくる言葉候補", {class: 'answer-word'} %>
+    <%= form.fields_for :answer_words do |aw|%>
+      <%= render "answer_word_fields", f: aw %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association "しっくりくる言葉を追加", form, :answer_words %>
+    </div>
+  </div>
+  <div class="field">
     <%= form.text_area :comment, id: "answer_comment_#{question.id}" %>
     <%= form.label :comment %>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '回答を編集する' %>
   </div>
 <% end %>

@@ -1,2 +1,2 @@
-$("#this_answer_<%= @answer.id %>").replaceWith("<%= j render 'answers/edit', question: @question, answer: @answer %>");
+$("#this_answer_<%= @answer.id %>").replaceWith("<%= j render 'answers/edit', question: @question, answer: @answer, answer_word: @answer_words %>");
 $("#notice").html("<%= j flash[:notice] %>");

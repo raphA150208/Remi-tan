@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
-  # validates :content, presence: true, length: { maximun: 1000 }
+  validates :content, presence: true, length: { maximum: 1000 }
   has_many :answers, dependent: :destroy
   belongs_to :user
   has_many :reminiscent_words, dependent: :destroy

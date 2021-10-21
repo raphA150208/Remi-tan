@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20 }
-  has_many :questions
-  has_many :answers
+  has_many :questions, dependent: :destroy
+  has_many :answers, dependent: :destroy
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
   def self.guest

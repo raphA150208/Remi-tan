@@ -1,7 +1,7 @@
 class AnswerWordsController < ApplicationController
 
   def update
-    @answer_word = AnswerWord.find(params[:id])
+    @answer_word = AnswerWord.find(params[:answer_word][:id])
     #ベストアンサーを選択
     @answer_word.best_answer_flg = true
     #アンサーワード更新
