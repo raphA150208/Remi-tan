@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
   def self.guest
-    find_or_create_by!(name: 'ゲスト', email: 'guest@email.com') do |user|
+    find_or_create_by!(name: 'ゲスト', email: 'guest@example.com') do |user|
       user.password = SecureRandom.alphanumeric()
     end
   end
