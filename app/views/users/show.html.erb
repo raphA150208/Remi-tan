@@ -1,38 +1,86 @@
-<div class="container">
-  <div class="row">
-    <div class="user_icon">
-      <h3 class="user_title"><%= current_user.name %></h3>
-    </div>
-    <div class="user_edit">
-      <%= link_to 'ユーザー情報編集', edit_user_registration_path ,class:"btn btn-default btn-xs" %>
+<head>
+  <%= stylesheet_link_tag 'users/show', :media => "all" %>
+  <script type="text/javascript" src="tab.js"></script>
+</head>
+<div class="main_content">
+  <div class="user_info_area">
+      <label><%= current_user.name %></label>
+      <button><%= link_to 'ユーザー情報編集', edit_user_registration_path ,class:"btn btn-default btn-xs" %></button>
+  </div>
+  <div class="history_area">
+    <div class="tab-panel">
+      <!--タブ-->
+      <ul class="tab-group">
+        <li class="tab tab_question is-active">質問</li>
+        <li class="tab tab_answer">回答</li>
+      </ul>
+
+      <!--タブを切り替えて表示するコンテンツ-->
+      <div class="panel-group">
+        <div class="panel tab_question is-show">
+          <div class="questions_list">
+            <% @my_questions.each do |my_question| %>
+              <div class="question_row">
+                <div class="question_area">
+                  <div class="status_area">
+                    <label class="status_label"><%= my_question.status %></label>
+                  </div>
+                  <div class="question_content_area">
+                    <div class="question_content">
+                      <p><%= my_question.content %></p>
+                    </div>
+                    <div class="reminiscent_words_area">
+                      <% my_question.reminiscent_words.each do |reminiscent_word| %>
+                        <label class="reminiscent_words_row"><%= reminiscent_word.keyword %></label>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+                <div class="detail_link_info_area">
+                  <div>
+                    <button><%= link_to '詳細', my_question %></button>
+                  </div>
+                  <div>
+                    <p><%= "投稿日時 : " + my_question.created_at.strftime('%Y/%m/%d') %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="panel-group">
+        <div class="panel tab_question is-show">
+          <div class="questions_list">
+            <% @my_answer_questions.each do |my_answer_question| %>
+              <div class="question_row">
+                <div class="question_area">
+                  <div class="status_area">
+                    <label class="status_label"><%= my_answer_question.status %></label>
+                  </div>
+                  <div class="question_content_area">
+                    <div class="question_content">
+                      <p><%= my_answer_question.content %></p>
+                    </div>
+                    <div class="reminiscent_words_area">
+                      <% my_answer_question.reminiscent_words.each do |reminiscent_word| %>
+                        <label class="reminiscent_words_row"><%= reminiscent_word.keyword %></label>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+                <div class="detail_link_info_area">
+                  <div>
+                    <button><%= link_to '詳細', my_answer_question %></button>
+                  </div>
+                  <div>
+                    <p><%= "投稿日時 : " + my_answer_question.created_at.strftime('%Y/%m/%d') %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <h2>質問</h2>
-  <% @my_questions.each do |my_question| %>
-    <tr>
-      <td><%= my_question.status %></td>
-      <td><%= my_question.content %></td>
-      <% my_question.reminiscent_words.each do |reminiscent_word| %>
-        <tr class="reiniscent_words_list">
-          <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
-        </tr>
-      <% end %>
-      <td><%= link_to '詳細', my_question %></td>
-      <td><%= "投稿日時 : " + my_question.created_at.strftime('%Y/%m/%d') %></td>
-    </tr>
-  <% end %>
-  <h2>回答</h2>
-  <% @my_answer_questions.each do |my_answer_question| %>
-    <tr>
-      <td><%= my_answer_question.status %></td>
-      <td><%= my_answer_question.content %></td>
-      <% my_answer_question.reminiscent_words.each do |reminiscent_word| %>
-        <tr class="reiniscent_words_list">
-          <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
-        </tr>
-      <% end %>
-      <td><%= link_to '詳細', my_answer_question %></td>
-      <td><%= "投稿日時 : " + my_answer_question.created_at.strftime('%Y/%m/%d') %></td>
-    </tr>
-  <% end %>
 </div>
