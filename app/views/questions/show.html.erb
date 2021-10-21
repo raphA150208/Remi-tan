@@ -29,15 +29,6 @@
     <% end %>
   </div>
   <p>回答一覧</p>
-  <% if @question.answers.present? %>
-    <% @question.answers.each do |answer| %>
-      <% answer.answer_words.each do |answer_word| %>
-        <tr class="answers_list">
-          <td class="answers_row"><%= answer_word.candidate %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  <% end %>
   <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
   <div id="answers_area">
     <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->

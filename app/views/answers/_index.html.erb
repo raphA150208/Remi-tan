@@ -4,10 +4,8 @@
       <div class="answer-comment" id ="this_answer_<%= answer.id %>"></div>
         <label>しっくりくる言葉候補</label>
         <% answer.answer_words.each do |answer_word| %>
-        <p><%= answer_word.id %></p>
           <p><%= answer_word.candidate %></p>
           <% if current_user == @question.user && @question.status != "解決済" %>
-            <p>質問id:<%= @question.id %></p>
             <%= form_with( model: answer_word, local: true, url: answer_word_path ) do |ba| %>
               <div class="best_answer">
                 <%= ba.hidden_field :id %>
