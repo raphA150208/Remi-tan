@@ -9,7 +9,6 @@ class AnswerWordsController < ApplicationController
     #ベストアンサーのしっくりくる言葉と紐付いた回答を代入
     @answer = Answer.find(@answer_word.answer_id)
     #@answerに紐付いた質問を代入
-    # binding.pry
     @question = Question.find(@answer.question_id)
     #質問のステータスを解決済(1)にする
     @question.status = 1
