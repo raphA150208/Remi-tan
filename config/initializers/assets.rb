@@ -21,10 +21,10 @@ Rails.application.config.assets.precompile += %w(
   questions/new.css
   questions/show.css
   header.css
-  registrations.css
   search.css
   session.css
   top.css
   users/show.css
   users/tab.css
+  registrations/new.css
 )
