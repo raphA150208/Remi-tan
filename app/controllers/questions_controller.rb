@@ -9,7 +9,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    # @answer = @question.answers.find(params[:id])
     @answer_word = AnswerWord.new
   end
 
@@ -19,6 +18,9 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    if current_user != @question.user
+      redirect_to questions_path, alert: '他のユーザーの質問投稿は編集できません'
+    end
   end
 
   def create

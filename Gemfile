@@ -20,6 +20,7 @@ gem 'cancancan'
 gem 'cocoon'
 gem 'ransack'
 gem 'jquery-rails'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
