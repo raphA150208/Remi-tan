@@ -1,4 +1,4 @@
-/* * {
+* {
   box-sizing: border-box;
 }
 
@@ -176,10 +176,10 @@ ul {
 }
 
 .question_content p {
-  display: -webkit-box;
+  display: box;
   padding: 5px;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  box-orient: vertical;
+  line-clamp: 3;
   margin-block-end: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -228,4 +228,4 @@ ul {
 .detail_link_info_area p {
   margin-block-start: 0;
   margin-block-end: 0;
-} */
+}

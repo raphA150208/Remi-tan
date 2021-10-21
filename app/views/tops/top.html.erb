@@ -1,30 +1,24 @@
-<div class="container">
-  <div class="top-content">
-    <div class="top_title">
-    <h1>Remi-tan</h1>
-    <h4></h4>
-    Remi-tanは文章を書く時に遭遇する「あの言葉なんだっけ？」の解決をサポートします。
-    </div>
+<head>
+  <%= stylesheet_link_tag 'top', :media => "all" %>
+</head>
+<div class="main_content">
+  <h1>Remi-tan</h1>
+  <div class="discription_area">
+    <h2>Remi-tanは文章を書く時に遭遇する「あの言葉なんだっけ？」の解決をサポートします。</h2>
+    <p>
+      大切な人に手紙を書く、取引先に商談のメールをする、、、<br>
+      文章を書いている時に、自分のイメージをうまく表現できる"しっくりくる言葉"が思いつかない、<br>
+      探しても見つからない、、、そんな場面に遭遇したことがありませんか？<br>
+      Remi-tanはユーザー同士で助け合って、あなたが探している"しっくりくる言葉”を探し出すことを目的としたサービスです。<br>
+    </p>
   </div>
-  <br>
-  <div class="middle-content">
-    <div class="contents col-md-6">
-      <div class="top_explain">
-        大切な人に手紙を書く、取引先に商談のメールをする、、、<br>
-        文章を書いている時に、自分のイメージをうまく表現できる"しっくりくる言葉"が思いつかない、<br>
-        探しても見つからない、、、そんな場面に遭遇したことがありませんか？<br>
-        Remi-tanはユーザー同士で助け合って、あなたが探している"しっくりくる言葉”を探し出すことを目的としたサービスです。<br>
-        <br>
-      </div>
-    </div>
-    <div class="contents col-md-6">
+  <div class="right_area">
+    <div class="button_area">
       <% unless user_signed_in? %>
-        <ul class="top_link">
-          <li><%= link_to "ログイン", new_user_session_path %></li><br>
-          <li><%= link_to "ユーザー登録", new_user_registration_path %></li><br>
-          <li><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %></li><br>
-          <li><%= link_to '管理者ゲストログイン', users_guest_admin_sign_in_path, method: :post %></li><br>
-        </ul>
+        <button><%= link_to "ログイン", new_user_session_path %></button>
+        <button><%= link_to "ユーザー登録", new_user_registration_path %></button>
+        <button><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %></button>
+        <button><%= link_to '管理者ゲストログイン', users_guest_admin_sign_in_path, method: :post %></button>
       <% end %>
     </div>
   </div>
