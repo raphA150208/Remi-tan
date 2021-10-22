@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.main_content {
+ margin: 150px auto 0;
+ width: 80%;
+ color: #333;
+}
+
+.question {
+ margin: 30px 0 0 30px;
+ max-width: 880px;
+ display: flex;
+ flex-direction: column;
+}
+
+.question-main {
+ display: flex;
+ flex-direction: row;
+}
+
+label {
+ font-size: 1.3em;
+ font-weight: bold;
+}
+
+.content {
+ display: flex;
+ flex-direction: column;
+ width: 50%;
+}
+
+.sentence {
+ display: flex;
+ flex-direction: column;
+ width: 50%;
+ margin-left: 40px;
+}
+
+.question-sub {
+ margin-top: 20px;
+}
+
+.reminiscent-word {
+ display: flex;
+ flex-direction: row;
+}
+
+.reminiscent-word label {
+ background-color: #4a4a4a;
+ padding: 3px 7px;
+ font-size: 1em;
+ font-weight: normal;
+ color: #ffffff;
+}
+
+.reminiscent-word label+label {
+ margin-left: 20px;
+}
+
+.question-sub .button-area {
+ margin: 40px 0 0 40px;
+ text-align: right;
+}
+
+button {
+ border: none;
+ padding: 10px 7px;
+ width: 100px;
+ margin-left: 20px;
+ ;
+}
+
+.divider {
+ background-color: #000000;
+ padding: 0.5px;
+ margin-bottom: 10px;
+}
+
+.answer-area{
+ margin-left: 30px;
+}
+
+.answer {
+ display: flex;
+ flex-direction: column;
+ width: 385px;
+ margin-top: 30px;
+ margin-bottom: 50px;
+}
+
+input[type="text"] {
+ height: 35px;
+ margin: 10px 0;
+}
+
+.comment {
+ margin-top: 20px;
+ display: flex;
+ flex-direction: column;
+}
+
+.comment textarea {
+ height: 70px;
+}
+
+.answer-bottom p {
+ font-size: 0.8em;
+}
+
+.answer-bottom {
+ margin-top: 20px;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.answer button {
+ width: 150px;
+ background-color: #4a4a4a;
+ color: #ffffff;
+}
