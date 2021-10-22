@@ -22,7 +22,6 @@ class AnswersController < ApplicationController
   def edit
     @answer = @question.answers.find(params[:id])
     @answer_words = @answer.answer_words
-    # binding.pry
     respond_to do |format|
       flash.now[:notice] = 'コメントの編集中'
       format.js { render :edit }
