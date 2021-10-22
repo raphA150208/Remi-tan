@@ -1,6 +1,7 @@
-User.create!(name: "naruto", email: "naruto@sample.com", password: "naruto", password_confirmation: "naruto", admin: true)
+# User.create!(name: "naruto", email: "naruto@sample.com", password: "naruto", password_confirmation: "naruto", admin: true)
 
-5.times do |n|name = Faker::JapaneseMedia::Naruto.character
+5.times do |n|
+  name = Faker::JapaneseMedia::Doraemon.character
   email = Faker::Internet.email
   password = "password"
   password_confirmation = "password"
@@ -50,17 +51,17 @@ end
 end
 
 ReminiscentWordsDictionary.seed do |s|
-    s.id = 1
-    s.answer_word = "しっくりくる言葉A"
-    s.best_answer_flg = true
-    s.reminiscent_word = "連想ワード6"
+  s.id = 1
+  s.answer_word = "しっくりくる言葉A"
+  s.best_answer_flg = true
+  s.reminiscent_word = "連想ワード6"
 end
 
 ReminiscentWordsDictionary.seed do |s|
-    s.id = 2
-    s.answer_word = "しっくりくる言葉A"
-    s.best_answer_flg = true
-    s.reminiscent_word = "連想ワード7"
+  s.id = 2
+  s.answer_word = "しっくりくる言葉A"
+  s.best_answer_flg = true
+  s.reminiscent_word = "連想ワード7"
 end
 
 ReminiscentWordsDictionary.seed do |s|
@@ -71,41 +72,41 @@ ReminiscentWordsDictionary.seed do |s|
 end
 
 ReminiscentWordsDictionary.seed do |s|
-    s.id = 4
-    s.answer_word = "しっくりくる言葉B"
-    s.best_answer_flg = false
-    s.reminiscent_word = "連想ワード6"
+  s.id = 4
+  s.answer_word = "しっくりくる言葉B"
+  s.best_answer_flg = false
+  s.reminiscent_word = "連想ワード6"
 end
 
 ReminiscentWordsDictionary.seed do |s|
-    s.id = 5
-    s.answer_word = "しっくりくる言葉B"
-    s.best_answer_flg = false
-    s.reminiscent_word = "連想ワード7"
+  s.id = 5
+  s.answer_word = "しっくりくる言葉B"
+  s.best_answer_flg = false
+  s.reminiscent_word = "連想ワード7"
 end
 ReminiscentWordsDictionary.seed do |s|
-    s.id = 6
-    s.answer_word = "しっくりくる言葉B"
-    s.best_answer_flg = false
-    s.reminiscent_word = "連想ワード8"
+  s.id = 6
+  s.answer_word = "しっくりくる言葉B"
+  s.best_answer_flg = false
+  s.reminiscent_word = "連想ワード8"
 end
 ReminiscentWordsDictionary.seed do |s|
-    s.id = 7
-    s.answer_word = "しっくりくる言葉C"
-    s.best_answer_flg = false
-    s.reminiscent_word = "連想ワード6"
+  s.id = 7
+  s.answer_word = "しっくりくる言葉C"
+  s.best_answer_flg = false
+  s.reminiscent_word = "連想ワード6"
 end
 ReminiscentWordsDictionary.seed do |s|
-    s.id = 8
-    s.answer_word = "しっくりくる言葉C"
-    s.best_answer_flg = false
-    s.reminiscent_word = "連想ワード7"
+  s.id = 8
+  s.answer_word = "しっくりくる言葉C"
+  s.best_answer_flg = false
+  s.reminiscent_word = "連想ワード7"
 end
 ReminiscentWordsDictionary.seed do |s|
-    s.id = 9
-    s.answer_word = "しっくりくる言葉C"
-    s.best_answer_flg = false
-    s.reminiscent_word = "連想ワード8"
+  s.id = 9
+  s.answer_word = "しっくりくる言葉C"
+  s.best_answer_flg = false
+  s.reminiscent_word = "連想ワード8"
 end
 
 
