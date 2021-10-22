@@ -11,7 +11,7 @@ body {
 
 .main_content {
  margin: 150px auto 0;
- width: 80%;
+ width: 90%;
  color: #333;
  display: flex;
 }
@@ -40,6 +40,7 @@ body {
  width: 150px;
  height: 30px;
  margin: 20px 0;
- background-color: #4a4a4a;
+ background-color: #C6B4CE;
  color: #ffffff;
+ border: none;
 }

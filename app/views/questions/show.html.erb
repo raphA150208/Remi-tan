@@ -1,37 +1,39 @@
-<%= stylesheet_link_tag 'questions/show', :media => "all" %>
-
-<div class="container">
-  <div class="question-text">
-    <p>
-      <%= @question.status %>
-    </p>
-
-    <p>
-      <strong>質問内容</strong>
-      <%= @question.content %>
-    </p>
-
-    <p>
-      <strong>前後の文脈</strong>
-      <%= @question.sentence %>
-    </p>
-
-    <p>
-      <% @question.reminiscent_words.each do |reminiscent_word| %>
-        <tr class="reiniscent_words_list">
-          <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
-        </tr>
-      <% end %>
-    </p>
-    <% if @question.user_id == current_user.id %>
-      <%= link_to '変更する', edit_question_path(@question) %>
-      <%= link_to '削除する', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
+<head>
+  <%= stylesheet_link_tag 'questions/show', :media => "all" %>
+</head>
+<div class="main_content">
+  <h1><%= @question.status %></h1>
+  <div class="question">
+    <div class="question-main">
+      <div class="content">
+        <label>質問内容</label>
+        <textarea readonly cols="10" rows="10"><%= @question.content %></textarea>
+      </div>
+      <div class="sentence">
+        <label>前後の文脈</label>
+        <textarea readonly cols="10" rows="10"><%= @question.sentence %></textarea>
+      </div>
+    </div>
+    <div class="question-sub">
+      <div class="reminiscent-word">
+        <% @question.reminiscent_words.each do |reminiscent_word| %>
+          <label><%= reminiscent_word.keyword %></label>
+        <% end %>
+      </div>
+      <div class="button-area">
+        <% if @question.user_id == current_user.id %>
+          <button><%= link_to '変更する', edit_question_path(@question) %></button>
+          <button><%= link_to '削除する', @question, method: :delete, data: { confirm: '本当に削除しますか?' } %></button>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <p>回答一覧</p>
-  <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
-  <div id="answers_area">
-    <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
-    <%= render partial: 'answers/index', locals: { answers: @question.answers, question: @question } %>
+  <div class="answer-area">
+    <h2>回答一覧</h2>
+    <div class="divider"></div>
+    <div id="answers">
+      <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+      <%= render partial: 'answers/index', locals: { answers: @question.answers, question: @question, answer_word: @answer_word } %>
+    </div>
   </div>
 </div>
