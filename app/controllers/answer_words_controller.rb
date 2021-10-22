@@ -38,7 +38,6 @@ class AnswerWordsController < ApplicationController
     @reminiscent_words_dictionaries.each{|rwd| rwd.save }
     #質問投稿詳細画面に遷移
     redirect_to question_path(@question)
-    # 質問詳細画面へ遷移する処理
   end
 
 end

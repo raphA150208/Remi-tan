@@ -1,31 +1,35 @@
-<ul>
-  <% answers.each do |answer| %>
-    <% if answer.id.present? %>
-      <div class="answer-comment" id ="this_answer_<%= answer.id %>"></div>
+<% answers.each do |answer| %>
+  <% if answer.id.present? %>
+    <div class="answer-comment" id ="this_answer_<%= answer.id %>"></div>
+    <% if answer.answer_words.present? %>
       <label>しっくりくる言葉候補</label>
-      <% answer.answer_words.each do |answer_word| %>
-        <p><%= answer_word.candidate %></p>
-        <% if answer_word.best_answer_flg == true %>
-          <label>⬆ベストアンサー⬆</label>
-        <% end %>
-        <% if current_user == @question.user && @question.status != "解決済" %>
-          <%= form_with( model: answer_word, local: true, url: answer_word_path ) do |ba| %>
-            <div class="best_answer">
-              <%= ba.hidden_field :id, :value => answer_word.id %>
-              <%= ba.submit 'ベストアンサー' %>
-            </div>
-          <% end %>
-        <% end %>
+    <% end %>
+    <% answer.answer_words.each do |answer_word| %>
+      <label><%= answer_word.candidate %></label>
+      <% if answer_word.best_answer_flg == true %>
+        <label>👑 ベストアンサー</label>
       <% end %>
-      <% if answer.comment.present? %>
-        <label>コメント</label>
-        <p><%= answer.comment %></p>
-        <% if current_user == answer.user %>
-          <p><%= link_to "回答編集", edit_question_answer_path(question, answer), remote: true %></p>
-          <p><%= link_to "回答削除", question_answer_path(answer.question_id, answer.id), method: :delete, remote: true,
-                                          data: { confirm: "本当に削除しますか?"} %></p>
+      <% if current_user == @question.user && @question.status != "解決済" %>
+        <%= form_with( model: answer_word, local: true, url: answer_word_path ) do |ba| %>
+          <div class="best_answer">
+            <%= ba.hidden_field :id, :value => answer_word.id %>
+            <button><%= ba.submit 'ベストアンサー' %></button>
+          </div>
         <% end %>
       <% end %>
     <% end %>
+    <div class="comment">
+      <% if answer.comment.present? %>
+        <label>コメント</label>
+        <p><%= answer.comment %></p>
+        <p><%= "投稿日時 : " + answer.created_at.strftime('%Y/%m/%d') %></p>
+        <p><%= answer.user.name %></p>
+        <% if current_user == answer.user %>
+          <a><%= link_to "回答編集", edit_question_answer_path(question, answer), remote: true %></a>
+          <a><%= link_to "回答削除", question_answer_path(answer.question_id, answer.id), method: :delete, remote: true,
+                                          data: { confirm: "本当に削除しますか?"} %></a>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
-</ul>
+<% end %>
