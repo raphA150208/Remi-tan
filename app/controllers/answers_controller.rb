@@ -14,13 +14,14 @@ class AnswersController < ApplicationController
         @answer_words
         format.js { render :index }
       else
-        format.html { redirect_to question_path(@question), notice: 'コメントできませんでした...' }
+        format.html { redirect_to question_path(@question), notice: '回答できませんでした...' }
       end
     end
   end
 
   def edit
     @answer = @question.answers.find(params[:id])
+    @answer_words = @answer.answer_words
     respond_to do |format|
       flash.now[:notice] = 'コメントの編集中'
       format.js { render :edit }

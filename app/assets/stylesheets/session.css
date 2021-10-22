@@ -1,4 +1,4 @@
-/* * {
+* {
   box-sizing: border-box;
 }
 
@@ -24,7 +24,7 @@ h1 {
  top: 50%;
  left: 50%;
  transform: translateY(-50%) translateX(-50%);
- -webkit- transform: translateY(-50%) translateX(-50%);
+ transform: translateY(-50%) translateX(-50%);
  width: 300px;
  display: flex;
  flex-direction: column;
@@ -51,4 +51,4 @@ button {
 a{
  color: #333;
  text-decoration: none;
-} */
+}
