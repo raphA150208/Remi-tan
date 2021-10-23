@@ -9,5 +9,6 @@ FactoryBot.define do
     content { '質問内容2' }
     sentence { '実際に使う文章2' }
     user { nil }
+    status { '解決済' }
   end
 end
