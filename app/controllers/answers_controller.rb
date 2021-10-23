@@ -11,7 +11,6 @@ class AnswersController < ApplicationController
     @answer.user_id = current_user.id
     respond_to do |format|
       if @answer.save
-        @answer_words
         format.js { render :index }
       else
         format.html { redirect_to question_path(@question), notice: '回答できませんでした...' }
