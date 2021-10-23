@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show]
   before_action :set_user, only: [:show]
   def show
+    # binding.pry
     if current_user != @user
       redirect_to user_path(current_user.id), notice: '他の人のユーザーページです'
     end

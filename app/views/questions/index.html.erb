@@ -14,7 +14,7 @@
     <% @questions.each do |question| %>
       <div class="question_row">
         <div class="status_area">
-          <label class="status_label"><%= question.status %></label>
+          <label class="<%= question.status == "回答受付中" ? 'open ': 'close ' %>status_label"><%= question.status %></%label>
         </div>
         <div class="middle_area">
           <div class="question_content">

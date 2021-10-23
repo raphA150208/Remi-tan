@@ -27,9 +27,28 @@ body {
  flex-direction: row;
 }
 
+.content p{
+  font-size: 16px;
+  background-color: #FFF5DE;
+  height: 186px;
+  padding: 5px
+}
+
+.sentence p{
+  font-size: 16px;
+  background-color: #FFF5DE;
+  height: 186px;
+  padding: 5px
+}
+
 label {
  font-size: 1.3em;
  font-weight: bold;
+}
+
+#best_answer{
+  font-size: 23px;
+  font-weight: 400;
 }
 
 .content {
@@ -97,9 +116,21 @@ button {
  margin-bottom: 50px;
 }
 
-input[type="text"] {
+.candidate_area{
+  display: flex;
+  align-items: center;
+}
+.candidate {
  height: 35px;
  margin: 10px 0;
+ border: solid 1px;
+ width: 385px;
+}
+
+.candidate label{
+ font-weight: 400;
+ font-size: 16px;
+ vertical-align: text-top;
 }
 
 .comment {
