@@ -1,32 +1,35 @@
-<div class="container">
-  <div class="question-text">
-     <p>
-      <%= @question.status %>
-    </p>
+<head>
+  <%= stylesheet_link_tag 'answer_new', :media => "all" %>
+</head>
 
-    <p>
-      <strong>質問内容</strong>
-      <%= @question.content %>
-    </p>
-
-    <p>
-      <strong>前後の文脈</strong>
-      <%= @question.sentence %>
-    </p>
-
-    <p>
-      <% @question.reminiscent_words.each do |reminiscent_word| %>
-        <tr class="reiniscent_words_list">
-          <td class="reminiscent_words_row"><%= reminiscent_word.keyword %></td>
-        </tr>
-      <% end %>
-    </p>
+<div class="main_content">
+  <h1><%= @question.status %></h1>
+  <div class="question">
+    <div class="question-main">
+      <div class="content">
+        <label>質問内容</label>
+        <p><%= @question.content %></p>
+      </div>
+      <div class="sentence">
+        <label>前後の文脈</label>
+        <p><%= @question.sentence %></p>
+      </div>
+    </div>
+    <div class="question-sub">
+      <div class="reminiscent-word">
+        <% @question.reminiscent_words.each do |reminiscent_word| %>
+          <label><%= reminiscent_word.keyword %></label>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <p>回答一覧</p>
-  <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
-  <div id="answers_area">
-    <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
-    <%= render partial: 'answers/index', locals: { answers: @answers, question: @question } %>
+  <div class="answer-area">
+    <h2>回答一覧</h2>
+    <div class="divider"></div>
+    <div id="answers_area">
+      <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+      <%= render partial: 'answers/index', locals: { answers: @answers, question: @question } %>
+    </div>
   </div>
   <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
   <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>

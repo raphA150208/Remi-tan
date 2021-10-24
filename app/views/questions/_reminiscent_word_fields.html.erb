@@ -1,6 +1,6 @@
 <div class="nested-fields">
   <%= f.hidden_field :id %>
-  <%= f.label "連想ワード", {class: 'reminiscent-word'} %>
+  <div><%= f.label "連想ワード", {class: 'reminiscent-word'} %></div>
   <%= f.text_field :keyword %>
-  <%= link_to_remove_association "削除", f %>
+  <button><%= link_to_remove_association "削除", f %></button>
 </div>

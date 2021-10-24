@@ -5,16 +5,20 @@
   <h1>質問一覧</h1>
   <div class="input-group">
     <%= form_with model: @question, method: :get, local: true do |form| %>
-      <%= form.select :search_status, Question.statuses.keys %>
-      <%= form.submit '絞り込み', name: 'search' %>
-      <%= link_to '解除', questions_path %>
+      <div class="status_select">
+        <%= form.select :search_status, Question.statuses.keys %>
+      </div>
+      <div class="status_select_item">
+        <button><%= form.submit '絞り込み', name: 'search' %></button>
+        <button><%= link_to '解除', questions_path %></button>
+      </div>
     <% end %>
   </div>
   <div class="questions_list">
     <% @questions.each do |question| %>
       <div class="question_row">
         <div class="status_area">
-          <label class="<%= question.status == "回答受付中" ? 'open ': 'close ' %>status_label"><%= question.status %></%label>
+          <label class="<%= question.status == "回答受付中" ? 'open ': 'close ' %>status_label"><%= question.status %></label>
         </div>
         <div class="middle_area">
           <div class="question_content">

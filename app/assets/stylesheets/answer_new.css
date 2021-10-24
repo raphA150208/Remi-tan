@@ -124,7 +124,7 @@ label {
   display: flex;
   align-items: center;
 }
-.candidate {
+.nested-fields input {
  height: 35px;
  margin: 10px 0;
  border: solid 1px;
@@ -163,11 +163,53 @@ a{
   color: #ffffff;
 }
 
-.best_answer button {
-  height: 29px;
-  width: 143px;
+.answer_comment{
+  margin-top: 19px;
+}
+
+.answer_comment textarea{
+  width: 385px;
+}
+
+
+.nested-fields button {
+  height: 26px;
+  width: 57px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
   cursor: pointer;
   border-radius: 3px;
+  margin-left: 13px;
+}
+
+.links .nested-fields button {
+  height: 26px;
+  width: 57px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 13px;
+}
+
+.links button {
+  height: 26px;
+  width: 171px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
+  cursor: pointer;
+  margin-top: 8px;
+  border-radius: 3px;
+}
+
+input[type="submit"] {
+  height: 30px;
+  width: 300px;
   background-color: #4a4a4a;
-  margin-left: 17px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.field{
+  margin-left: 30px;
 }

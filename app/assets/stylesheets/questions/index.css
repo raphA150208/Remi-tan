@@ -20,16 +20,24 @@ h1 {
 }
 
 input {
-  height: 30px;
-  margin-bottom: 20px;
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
 }
 
-button {
-  margin-top: 20px;
-  height: 30px;
-  background-color: #4a4a4a;
-  color: #ffffff;
+.input-group form{
+  display: flex;
+}
+
+.input-group button{
+  height: 26px;
+  width: 75px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 a {
@@ -62,7 +70,7 @@ a {
   color: #ffffff;
   padding: 3px 10px;
   top: 15px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .open{
@@ -113,7 +121,7 @@ a {
   margin: 0 0 10px;
   padding-top: 3px;
   font-size: 13px;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .reminiscent_word_label+.reminiscent_word_label {
@@ -129,8 +137,12 @@ a {
 
 .detail_link_area a {
   position: absolute;
-  top: 30px;
-  left: 40%;
+    top: 30px;
+    left: 40%;
+    background-color: #e0e0e0;
+    padding: 0px 8px;
+    border-radius: 3px;
+    font-size: 15px;
 }
 
 .question_info_area {

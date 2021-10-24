@@ -23,7 +23,7 @@
               <div class="question_row">
                 <div class="question_area">
                   <div class="status_area">
-                    <label class="status_label"><%= my_question.status %></label>
+                    <label class="<%= my_question.status == "回答受付中" ? 'open ': 'close ' %>status_label"><%= my_question.status %></label>
                   </div>
                   <div class="question_content_area">
                     <div class="question_content">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="reminiscent_words_area">
                       <% my_question.reminiscent_words.each do |reminiscent_word| %>
-                        <label class="reminiscent_words_row"><%= reminiscent_word.keyword %></label>
+                        <label class="reminiscent_word_label"><%= reminiscent_word.keyword %></label>
                       <% end %>
                     </div>
                   </div>
@@ -54,7 +54,7 @@
               <div class="question_row">
                 <div class="question_area">
                   <div class="status_area">
-                    <label class="status_label"><%= my_answer_question.status %></label>
+                    <label class="<%= my_answer_question.status == "回答受付中" ? 'open ': 'close ' %>status_label"><%= my_answer_question.status %></label>
                   </div>
                   <div class="question_content_area">
                     <div class="question_content">
@@ -62,7 +62,7 @@
                     </div>
                     <div class="reminiscent_words_area">
                       <% my_answer_question.reminiscent_words.each do |reminiscent_word| %>
-                        <label class="reminiscent_words_row"><%= reminiscent_word.keyword %></label>
+                        <label class="reminiscent_word_label"><%= reminiscent_word.keyword %></label>
                       <% end %>
                     </div>
                   </div>
