@@ -1,3 +1,4 @@
 $("#answers_area").html("<%= j(render 'answers/index', { answers: @answer.question.answers, question: @answer.question }) %>");
 $("textarea").val('');
+$("input[type=text]").val('');
 $("#notice").html("<%= j flash[:notice] %>");
