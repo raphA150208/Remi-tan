@@ -6,7 +6,9 @@
   <%= search_form_for @q, url: search_path do |f| %>
     <%= search_field_tag "q[reminiscent_word_matches_all][]" %>
     <br>
-    <%= f.submit '検索' %>
+    <div class="text_align_right">
+      <button><%= f.submit '検  索' %></button>
+    </div>
   <% end %>
 
   <% if @search_word.present? %>
