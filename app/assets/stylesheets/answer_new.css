@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main_content {
+ margin: 150px auto 0;
+ width: 80%;
+ color: #333;
+}
+
+.question {
+ margin: 30px 0 0 30px;
+ max-width: 880px;
+ display: flex;
+ flex-direction: column;
+}
+
+.question-main {
+ display: flex;
+ flex-direction: row;
+}
+
+.content p{
+  font-size: 16px;
+  background-color: #FFF5DE;
+  height: 186px;
+  padding: 5px
+}
+
+.sentence p{
+  font-size: 16px;
+  background-color: #FFF5DE;
+  height: 186px;
+  padding: 5px
+}
+
+label {
+ font-size: 1.3em;
+ font-weight: bold;
+}
+
+#best_answer{
+  font-size: 20px;
+  margin-left: 17px;
+  font-weight: 600;
+  font-style: italic;
+  color: #FFC947;
+}
+
+.content {
+ display: flex;
+ flex-direction: column;
+ width: 50%;
+}
+
+.sentence {
+ display: flex;
+ flex-direction: column;
+ width: 50%;
+ margin-left: 40px;
+}
+
+.question-sub {
+ margin-top: 20px;
+}
+
+.reminiscent-word {
+ display: flex;
+ flex-direction: row;
+}
+
+.reminiscent-word label {
+  background-color: #3C5186;
+  padding: 3px 7px;
+  font-size: 1em;
+  font-weight: normal;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.reminiscent-word label+label {
+ margin-left: 20px;
+}
+
+.question-sub .button-area {
+ margin: 40px 0 0 40px;
+ text-align: right;
+}
+
+.button-area button {
+  height: 26px;
+  width: 128px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.divider {
+ background-color: #000000;
+ padding: 0.5px;
+ margin-bottom: 10px;
+}
+
+.answer-area{
+ margin-left: 30px;
+}
+
+.answer {
+ display: flex;
+ flex-direction: column;
+ width: 385px;
+ margin-top: 30px;
+ margin-bottom: 50px;
+}
+
+.candidate_area{
+  display: flex;
+  align-items: center;
+}
+.nested-fields input {
+ height: 35px;
+ margin: 10px 0;
+ border: solid 1px;
+ width: 385px;
+}
+
+.candidate label{
+ font-weight: 400;
+ font-size: 16px;
+ vertical-align: text-top;
+ margin-left: 9px;
+}
+
+.comment {
+ margin-top: 20px;
+ display: flex;
+ flex-direction: column;
+}
+
+.comment textarea {
+ height: 70px;
+}
+
+a{
+  text-decoration: none;
+  color: #000000;
+}
+
+.best_answer input {
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.answer_comment{
+  margin-top: 19px;
+}
+
+.answer_comment textarea{
+  width: 385px;
+}
+
+
+.nested-fields button {
+  height: 26px;
+  width: 57px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 13px;
+}
+
+.links .nested-fields button {
+  height: 26px;
+  width: 57px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 13px;
+}
+
+.links button {
+  height: 26px;
+  width: 171px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
+  cursor: pointer;
+  margin-top: 8px;
+  border-radius: 3px;
+}
+
+input[type="submit"] {
+  height: 30px;
+  width: 300px;
+  background-color: #4a4a4a;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.field{
+  margin-left: 30px;
+}
