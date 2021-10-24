@@ -20,16 +20,24 @@ h1 {
 }
 
 input {
-  height: 30px;
-  margin-bottom: 20px;
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
 }
 
-button {
-  margin-top: 20px;
-  height: 30px;
-  background-color: #4a4a4a;
-  color: #ffffff;
+.input-group form{
+  display: flex;
+}
+
+.input-group button{
+  height: 26px;
+  width: 75px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 a {
