@@ -74,11 +74,12 @@ label {
 }
 
 .reminiscent-word label {
- background-color: #4a4a4a;
- padding: 3px 7px;
- font-size: 1em;
- font-weight: normal;
- color: #ffffff;
+  background-color: #3C5186;
+  padding: 3px 7px;
+  font-size: 1em;
+  font-weight: normal;
+  border-radius: 4px;
+  color: #ffffff;
 }
 
 .reminiscent-word label+label {

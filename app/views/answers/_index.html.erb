@@ -10,7 +10,7 @@
           <label><%= answer_word.candidate %></label>
         </div>
         <% if answer_word.best_answer_flg == true %>
-          <label id="best_answer">👑 ベストアンサー</label>
+          <label id="best_answer">ベストアンサー</label>
         <% end %>
       </div>
       <% if current_user == @question.user && @question.status != "解決済" %>

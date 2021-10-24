@@ -62,7 +62,7 @@ a {
   color: #ffffff;
   padding: 3px 10px;
   top: 15px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .open{
@@ -113,7 +113,7 @@ a {
   margin: 0 0 10px;
   padding-top: 3px;
   font-size: 13px;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .reminiscent_word_label+.reminiscent_word_label {
@@ -129,8 +129,12 @@ a {
 
 .detail_link_area a {
   position: absolute;
-  top: 30px;
-  left: 40%;
+    top: 30px;
+    left: 40%;
+    background-color: #e0e0e0;
+    padding: 0px 8px;
+    border-radius: 3px;
+    font-size: 15px;
 }
 
 .question_info_area {

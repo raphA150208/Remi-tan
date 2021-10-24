@@ -30,6 +30,7 @@ input {
 a {
   color: #333;
   text-decoration: none;
+  font-weight: 600;
 }
 
 form {
@@ -82,9 +83,10 @@ img {
   height: 30px;
   width: 130px;
   margin-top: 20px;
-  background-color: #ffffff;
-  color: #333333;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 .tab-group {
@@ -158,6 +160,7 @@ ul {
   color: #ffffff;
   padding: 3px 10px;
   top: 15px;
+  border-radius: 3px;
 }
 
 .open{
@@ -204,13 +207,14 @@ ul {
 }
 
 .reminiscent_word_label {
-  background-color: #4a4a4a;
+  background-color: #3C5186;
   color: #ffffff;
   height: 25px;
   min-width: 100px;
   text-align: center;
   margin: 0 0 10px;
-  padding: 2px;
+  padding: 0px 6px;
+  border-radius: 3px;
 }
 
 .reminiscent_word_label+.reminiscent_word_label {
@@ -230,6 +234,7 @@ ul {
   border: none;
   width: 70px;
   margin-right: 40px;
+  border-radius: 3px;
 }
 
 .detail_link_info_area p {

@@ -31,7 +31,7 @@
                     </div>
                     <div class="reminiscent_words_area">
                       <% my_question.reminiscent_words.each do |reminiscent_word| %>
-                        <label class="reminiscent_words_row"><%= reminiscent_word.keyword %></label>
+                        <label class="reminiscent_word_label"><%= reminiscent_word.keyword %></label>
                       <% end %>
                     </div>
                   </div>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="reminiscent_words_area">
                       <% my_answer_question.reminiscent_words.each do |reminiscent_word| %>
-                        <label class="reminiscent_words_row"><%= reminiscent_word.keyword %></label>
+                        <label class="reminiscent_word_label"><%= reminiscent_word.keyword %></label>
                       <% end %>
                     </div>
                   </div>
