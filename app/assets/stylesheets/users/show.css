@@ -155,10 +155,17 @@ ul {
 
 .status_label {
   position: absolute;
-  background-color: #4a4a4a;
   color: #ffffff;
   padding: 3px 10px;
   top: 15px;
+}
+
+.open{
+  background-color: #FFC947;
+}
+
+.close{
+  background-color: #6D8299;
 }
 
 .question_content_area {
