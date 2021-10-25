@@ -10,7 +10,7 @@ body {
 }
 
 .main_content {
- margin: 150px auto 0;
+ margin: 130px auto 0;
  width: 80%;
  color: #333;
 }
@@ -30,17 +30,25 @@ h1 {
  flex-direction: column;
 }
 
-input {
- height: 30px;
- margin-bottom: 20px;
+input{
+  height: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#user_remember_me {
+  width: 15px;
+  height: 15px;
 }
 
 button {
- margin-top: 20px;
- height: 30px;
- background-color: #4a4a4a;
- color: #ffffff;
- cursor: pointer;
+  margin-top: 20px;
+  height: 30px;
+  background-color: #4a4a4a;
+  color: #ffffff;
+  cursor: pointer;
+  display: block;
+  width: 100%;
 }
 
 .signup_link{
@@ -51,4 +59,13 @@ button {
 a{
  color: #333;
  text-decoration: none;
+}
+
+.login_button input{
+  appearance: none;
+  padding-bottom: 5px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
 }
