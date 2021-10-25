@@ -1,5 +1,5 @@
 .main-content{
-  margin: 150px auto 0;
+  margin: 100px auto 100px;
    width: 80%;
 }
 input[type="text"] {
@@ -31,6 +31,16 @@ div.question-content{
 }
 
 .nested-fields button{
+  height: 26px;
+  width: 57px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 13px;
+}
+
+.links .nested-fields button {
   height: 26px;
   width: 57px;
   background-color: #EFEFEF;

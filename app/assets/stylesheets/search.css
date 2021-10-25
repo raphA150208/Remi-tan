@@ -10,7 +10,7 @@ body {
 }
 
 .main_content {
- margin: 150px auto 0;
+ margin: 150px auto 100px;
  width: 80%;
  color: #333;
 }
@@ -26,21 +26,18 @@ input {
 }
 
 .text_align_right input{
-  appearance: none;
   border: none;
-  outline: none;
   background: transparent;
   font-size: 18px;
   width: 100%;
   color: #ffffff;
   transform: translateY(-2px);
+  cursor: pointer;
 }
 .text_align_right button {
  height: 30px;
  width: 250px;
  background-color: #4a4a4a;
- color: #ffffff;
- cursor: pointer;
 }
 
 a{
@@ -49,7 +46,6 @@ a{
 }
 
 form {
- margin-left: 40px;
  color: #333333;
  display: flex;
  flex-direction: column;

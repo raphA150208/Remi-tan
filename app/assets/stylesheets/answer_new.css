@@ -9,7 +9,7 @@ body {
 }
 
 .main_content {
- margin: 150px auto 0;
+ margin: 150px auto 100px;
  width: 80%;
  color: #333;
 }
@@ -28,7 +28,7 @@ body {
 
 .content p, .sentence p{
   font-size: 15px;
-  background-color: #FFF5DE;
+  background-color: #E8F0F2;
   height: 186px;
   padding: 4px 12px;
   margin-block-end: 0;

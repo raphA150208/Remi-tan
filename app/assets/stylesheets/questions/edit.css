@@ -1,5 +1,5 @@
 .main-content{
-  margin: 150px auto 0;
+  margin: 100px auto 100px;
    width: 80%;
 }
 input[type="text"] {
@@ -27,7 +27,7 @@ div.question-content{
 }
 
 #question_content, #question_sentence{
-  background-color: #FFF5DE;
+  background-color: #E8F0F2;
 }
 .reminiscent-word{
   font-size: 1.2em;

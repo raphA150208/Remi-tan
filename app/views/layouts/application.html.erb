@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Testapp</title>
+    <title>Remi-tan</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'header_footer', :media => "all" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
       <nav class="navbar navbar-default">
-        <% if user_signed_in? %>
-          <%= link_to "質問一覧", questions_path %>
-          <%= link_to "質問する", new_question_path %>
-          <%= link_to "連想ワード検索", search_path %>
-          <%= link_to "マイページ", user_path(current_user.id) %>
-          <% if current_user.try(:admin?) %>
-            <%= link_to "管理者画面", rails_admin_path %>
-          <% end %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "ログイン", new_user_session_path %>
-          <%= link_to "ユーザー登録", new_user_registration_path %>
-          <%= link_to 'トップページ', root_path %>
-        <% end %>
+          <p>Remi-tan</p>
+          <ul>
+            <% if user_signed_in? %>
+              <li><%= link_to "質問一覧", questions_path %></li>
+              <li><%= link_to "質問する", new_question_path %></li>
+              <li><%= link_to "連想ワード検索", search_path %></li>
+              <li><%= link_to "マイページ", user_path(current_user.id) %></li>
+              <% if current_user.try(:admin?) %>
+                <li><%= link_to "管理者画面", rails_admin_path %></li>
+              <% end %>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "ログイン", new_user_session_path %></li>
+              <li><%= link_to "ユーザー登録", new_user_registration_path %></li>
+              <li><%= link_to 'トップページ', root_path %></li>
+            <% end %>
+          </ul>
       </nav>
     </header>
-
-    <% if notice %>
-    <p class="alert alert-notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-error"><%= alert %></p>
-  <% end %>
-    <%= yield %>
+    <div class="main">
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="footer_area">
+        <p>Copyright © 2021 Rem-tan</p>
+      </div>
+    </footer>
   </body>
 </html>

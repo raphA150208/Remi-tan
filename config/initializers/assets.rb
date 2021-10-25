@@ -16,6 +16,7 @@ Rails.application.config.assets.precompile += %w(
   style.css
   common/*
   partial/*
+  header_footer.css
   questions/index.css
   questions/edit.css
   questions/new.css

@@ -17,7 +17,7 @@ body {
 }
 
 .discription_area {
-  padding: 17px 29px 47px;
+  padding: 17px 70px 47px;
   background-color: #E8E1D9;
   width: 65%;
   border-radius: 2px;
@@ -42,11 +42,13 @@ body {
   margin: 20px 0;
   background-color: #3C5186;
   border: none;
+  border-radius: 3px;
 }
 
 .button_area a{
   font-size: 15px;
   color: #ffffff;
   text-decoration: none;
-  border-radius: 3px;
+  display: block;
+  cursor: pointer;
 }
