@@ -10,7 +10,7 @@ body {
 }
 
 .main_content {
- margin: 150px auto 0;
+ margin: 150px auto 100px;
  width: 80%;
  color: #333;
 }
@@ -49,7 +49,6 @@ a{
 }
 
 form {
- margin-left: 40px;
  color: #333333;
  display: flex;
  flex-direction: column;

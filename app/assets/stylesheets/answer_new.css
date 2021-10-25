@@ -9,7 +9,7 @@ body {
 }
 
 .main_content {
- margin: 150px auto 0;
+ margin: 150px auto 100px;
  width: 80%;
  color: #333;
 }

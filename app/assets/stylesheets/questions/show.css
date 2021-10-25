@@ -9,7 +9,7 @@ body {
 }
 
 .main_content {
- margin: 150px auto 0;
+ margin: 100px auto 100px;
  width: 80%;
  color: #333;
 }
@@ -149,6 +149,7 @@ label {
 a{
   text-decoration: none;
   color: #000000;
+  display: block;
 }
 
 .best_answer input {
