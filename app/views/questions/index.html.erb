@@ -34,9 +34,9 @@
         </div>
         <div class="detail_link_area">
           <% if question.user == current_user || question.status == "解決済" %>
-            <a href="/"><%= link_to '詳細', question %></a>
+            <button><%= link_to '詳細', question %></button>
           <% else %>
-            <a href="/"><%= link_to '回答する', new_question_answer_path(question) %></a>
+            <button><%= link_to '回答する', new_question_answer_path(question) %></button>
           <% end %>
         </div>
         <div class="question_info_area">
