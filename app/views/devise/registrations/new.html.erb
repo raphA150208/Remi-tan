@@ -12,7 +12,7 @@
       <label><%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "email@example.com" %></label><br />
       <label><%= f.label :password %></label>
       <% if @minimum_password_length %>
-      <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+        <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
       <% end %><br />
       <label><%= f.password_field :password, autocomplete: "new-password", :placeholder => "******" %></label><br />
       <label><%= f.label :password_confirmation %></label><br />

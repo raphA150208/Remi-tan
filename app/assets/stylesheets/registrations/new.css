@@ -10,7 +10,7 @@ body {
 }
 
 .main_content {
- margin: 150px auto 0;
+ margin: 130px auto 0;
  width: 80%;
  color: #333;
 }
@@ -34,6 +34,7 @@ h1 {
 input {
  height: 30px;
  margin-bottom: 20px;
+ width: 100%;
 }
 
 button {
@@ -42,6 +43,7 @@ button {
  background-color: #4a4a4a;
  color: #ffffff;
  cursor: pointer;
+ width: 100%;
 }
 
 .login_link{
@@ -52,4 +54,13 @@ button {
 a{
  color: #333;
  text-decoration: none;
+}
+
+.actions input{
+  appearance: none;
+  padding-bottom: 5px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
 }
