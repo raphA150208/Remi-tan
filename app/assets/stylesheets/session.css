@@ -47,6 +47,7 @@ button {
   background-color: #4a4a4a;
   color: #ffffff;
   cursor: pointer;
+  display: block;
   width: 100%;
 }
 

@@ -27,5 +27,6 @@ Rails.application.config.assets.precompile += %w(
   users/show.css
   users/tab.css
   registrations/new.css
+  registrations/edit.css
   answer_new.css
 )
