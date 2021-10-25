@@ -1,7 +1,11 @@
-<%= stylesheet_link_tag 'questions/edit', :media => "all" %>
+<head>
+  <%= stylesheet_link_tag 'questions/edit', :media => "all" %>
+</head>
 
-<h1>質問編集</h1>
-
-<%= render 'form', question: @question %>
-
-<%= link_to '質問詳細', @question %>
+<div class="main-content">
+  <h1>質問編集</h1>
+  <%= render 'form', question: @question %>
+  <div class="show_click">
+    <button><%= link_to '戻る', @question %></button>
+  </div>
+</div>
