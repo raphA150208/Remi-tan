@@ -40,6 +40,16 @@ div.question-content{
   margin-left: 13px;
 }
 
+.links .nested-fields button {
+  height: 26px;
+  width: 57px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 13px;
+}
+
 .links button{
   height: 26px;
   width: 128px;

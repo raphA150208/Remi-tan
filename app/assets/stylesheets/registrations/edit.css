@@ -30,6 +30,7 @@ input {
   height: 30px;
   margin-bottom: 20px;
   width: 300px;
+  cursor: pointer;
 }
 
 .actions button {
@@ -63,6 +64,7 @@ a{
   outline: none;
   background: transparent;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .back_mypage button{
