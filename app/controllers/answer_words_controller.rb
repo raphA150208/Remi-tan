@@ -32,6 +32,7 @@ class AnswerWordsController < ApplicationController
             @reminiscent_words_dictionary = ReminiscentWordsDictionary.new
             @reminiscent_words_dictionary.reminiscent_word = rw.keyword
             @reminiscent_words_dictionary.answer_word = aw.candidate
+            @reminiscent_words_dictionary.question_id = @question.id
             #ベストアンサーに選んだしっくりくる言葉と連想ワード辞書に作成したしっくりくる言葉が等しかったら、ベストアンサーフラグを立てる
             if @answer_word.candidate == aw.candidate
                 @reminiscent_words_dictionary.best_answer_flg = true
