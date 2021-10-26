@@ -17,7 +17,13 @@ class AnswerWordsController < ApplicationController
     #@questionに紐付いた連想ワードを代入
     @reminiscent_words = @question.reminiscent_words
     #@answerに紐付いたしっくりくる言葉を代入
-    @answer_words = @answer.answer_words
+    @answers = @question.answers
+    @answer_words = []
+    @answers.each do |a|
+      a.answer_words.each do |aw|
+        @answer_words.push(aw)
+      end
+    end
     #nil宣言
     @reminiscent_words_dictionaries = []
     #連想ワード(keyword)としっくりくる言葉候補(candidate)から連想ワード辞書テーブルの連想ワード(reminiscent_word)としっくりくる言葉候補(answer_word)を作って保存する

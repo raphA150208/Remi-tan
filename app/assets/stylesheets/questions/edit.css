@@ -80,3 +80,12 @@ h1{
   font-size: 1.3em;
   margin-bottom: 5px;
 }
+.links .nested-fields button {
+  height: 26px;
+  width: 57px;
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 13px;
+}
