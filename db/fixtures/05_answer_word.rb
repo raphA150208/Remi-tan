@@ -7,7 +7,7 @@ end
 AnswerWord.seed do |s|
   s.id = 2
   s.candidate = '醸成'
-  s.best_answer_flg = false
+  s.best_answer_flg = true
   s.answer_id = 1
 end
 AnswerWord.seed do |s|

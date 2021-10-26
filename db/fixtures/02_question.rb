@@ -2,14 +2,14 @@ Question.seed do |s|
   s.id = 1
   s.content = '時間経過によって徐々に育まれる…そんなイメージの言葉を探してします。'
   s.sentence = 'まちに対する誇りを意味するシビックプライドの〇〇のため、2つの事業を開催します。'
-  s.status = 0
+  s.status = 1
   s.user_id = 1
 end
 Question.seed do |s|
   s.id = 2
   s.content = '記載した連想ワードは私のイメージに合致するものではありませんが、類似するものです。'
   s.sentence = 'わたしたち団体が日常的に直面する課題に対する解答がすでに提示されていたり、問題解決の糸口が〇〇されたりしています。'
-  s.status = 0
+  s.status = 1
   s.user_id = 2
 end
 Question.seed do |s|

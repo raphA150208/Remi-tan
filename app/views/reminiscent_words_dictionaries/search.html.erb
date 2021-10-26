@@ -12,11 +12,13 @@
   <% end %>
 
   <% if @search_word.present? %>
-    <h3>しっくりくる言葉は以下の中にありますか？</h3>
+    <h3>しっくりくる言葉は見つかりましたか？</h3>
     <div class="results_list">
       <% @results.each do |r| %>
-        <p><%= r.answer_word %></p><br />
-        <button><%= link_to "質問投稿の詳細", question_path(r.question_id) %></button>
+        <div class="answer_word">
+          <p><%= r.answer_word %></p>
+          <button><%= link_to "質問投稿の詳細", question_path(r.question_id) %></button>
+        </div>
       <% end %>
     </div>
   <% end %>
