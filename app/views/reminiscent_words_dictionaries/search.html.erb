@@ -16,6 +16,7 @@
     <div class="results_list">
       <% @results.each do |r| %>
         <p><%= r.answer_word %></p><br />
+        <button><%= link_to "質問投稿の詳細", question_path(r.question_id) %></button>
       <% end %>
     </div>
   <% end %>
