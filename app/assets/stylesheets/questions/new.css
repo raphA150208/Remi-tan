@@ -78,3 +78,7 @@ h1{
   font-size: 1.3em;
   margin-bottom: 5px;
 }
+
+.question-content textarea{
+  background-color: #E8F0F2;
+}
