@@ -19,12 +19,13 @@ h1 {
   margin-bottom: 50px;
 }
 
-input {
+.status_select_item input{
   appearance: none;
   padding: 0;
   border: none;
   outline: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .input-group form{
@@ -36,13 +37,14 @@ input {
   width: 75px;
   background-color: #EFEFEF;
   border-color: #EFEFEF;
-  cursor: pointer;
   border-radius: 3px;
 }
 
 a {
   color: #333;
   text-decoration: none;
+  cursor: pointer;
+  display: block;
 }
 
 .status_select {

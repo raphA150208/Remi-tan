@@ -74,3 +74,11 @@ nav {
 footer p{
   font-size: 13px;
 }
+
+.alert-space p {
+  font-size: 16px;
+  color: #333;
+  padding-top: 58px;
+  padding-left: 40px;
+}
+

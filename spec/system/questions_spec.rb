@@ -71,4 +71,18 @@ RSpec.describe '質問投稿機能', type: :system do
       end
     end
   end
+  describe 'アクセス制限のテスト' do
+    before do
+      visit new_user_session_path
+      fill_in 'user[email]', with: 'basic_email@gmail.com'
+      fill_in 'user[password]', with: 'password'
+      click_button 'ログイン'
+    end
+    context '自分が投稿してない投稿を編集しようとした場合' do
+      it 'アクセス制限がかかり、投稿編集画面に遷移できない' do
+        visit edit_question_path(@question2)
+        expect(page).to have_content '他のユーザーの質問投稿は編集できません'
+      end
+    end
+  end
 end

@@ -7,6 +7,7 @@ RSpec.describe '連想ワード機能', type: :system do
     @question2 = FactoryBot.create(:question2, user: @user2)
     @reminiscent_words_dictionary1 = FactoryBot.create(:reminiscent_words_dictionary1)
     @reminiscent_words_dictionary2 = FactoryBot.create(:reminiscent_words_dictionary2)
+    @reminiscent_words_dictionary3 = FactoryBot.create(:reminiscent_words_dictionary3)
   end
 
   describe '連想ワード登録のテスト' do
@@ -29,7 +30,7 @@ RSpec.describe '連想ワード機能', type: :system do
     end
   end
 
-  describe '検索機能のテスト' do
+  describe '検索機能のテスト1' do
     before do
       visit new_user_session_path
       fill_in 'user[email]', with: 'basic_email@gmail.com'
@@ -43,6 +44,23 @@ RSpec.describe '連想ワード機能', type: :system do
         click_button '検索'
         expect(page).to have_content 'しっくりくる言葉1'
         expect(page).not_to have_content 'しっくりくる言葉2'
+      end
+    end
+  end
+  describe '検索機能のテスト2' do
+    before do
+      visit new_user_session_path
+      fill_in 'user[email]', with: 'basic_email@gmail.com'
+      fill_in 'user[password]', with: 'password'
+      click_button 'ログイン'
+    end
+    context '2つの連想ワードで検索した場合' do
+      it '検索した連想ワードに紐づいたしっくりくる言葉が表示される' do
+        visit search_path
+        fill_in 'q[reminiscent_word_matches_all][]', with: '連想ワード2 連想ワード3'
+        click_button '検索'
+        expect(page).to have_content 'しっくりくる言葉2'
+        expect(page).not_to have_content 'しっくりくる言葉1'
       end
     end
   end

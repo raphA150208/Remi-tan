@@ -8,4 +8,8 @@ FactoryBot.define do
     answer_word { 'しっくりくる言葉2' }
     reminiscent_word { '連想ワード2' }
   end
+  factory :reminiscent_words_dictionary3, class: ReminiscentWordsDictionary do
+    answer_word { 'しっくりくる言葉2' }
+    reminiscent_word { '連想ワード3' }
+  end
 end

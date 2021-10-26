@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
         # @answer = @question.answers.build
         format.js { render :index }
       else
-        format.html { redirect_to question_path(@question), notice: '回答できませんでした...' }
+        format.html { redirect_to new_question_answer_path(@question), notice: '回答できませんでした...' }
       end
     end
   end

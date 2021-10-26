@@ -4,7 +4,7 @@
 <div class="main_content">
   <h1>連想ワードで検索する</h1>
   <%= search_form_for @q, url: search_path do |f| %>
-    <%= search_field_tag "q[reminiscent_word_matches_all][]" %>
+    <%= search_field_tag "q[reminiscent_word_matches_all]" %>
     <br>
     <div class="text_align_right">
       <button><%= f.submit '検索' %></button>
@@ -12,8 +12,7 @@
   <% end %>
 
   <% if @search_word.present? %>
-    <h1>検索結果</h1>
-    <h3>しっくりくる言葉</h3>
+    <h3>しっくりくる言葉は以下の中にありますか？</h3>
     <div class="results_list">
       <% @results.each do |r| %>
         <p><%= r.answer_word %></p><br />
