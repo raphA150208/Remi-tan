@@ -6,12 +6,12 @@ RSpec.describe '連想ワード辞書機能', type: :model do
       @question = FactoryBot.create(:question1, user: @user)
     end
 
-    context 'しっくりくる言葉候補と連想ワードが入力された場合' do
-      it "バリデーションが通る" do
-        reminiscent_words_dictionary = FactoryBot.build(:reminiscent_words_dictionary2)
-        expect(reminiscent_words_dictionary).to be_valid
-      end
-    end
+    # context 'しっくりくる言葉候補と連想ワードが入力された場合' do
+    #   it "バリデーションが通る" do
+    #     reminiscent_words_dictionary = FactoryBot.build(:reminiscent_words_dictionary2)
+    #     expect(reminiscent_words_dictionary).to be_valid
+    #   end
+    # end
     context 'しっくりくる言葉候補が空の場合' do
       it "バリデーションが引っかかる" do
         reminiscent_words_dictionary = FactoryBot.build(:reminiscent_words_dictionary2, answer_word: nil)
