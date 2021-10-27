@@ -2,16 +2,19 @@
   <%= stylesheet_link_tag 'search', :media => "all" %>
 </head>
 <div class="main_content">
-  <h1>連想ワードで検索する</h1>
-  <h3>あなたが表現したいイメージから、<br>連想できる単語や文章を入力してしっくりくる言葉を探してみよう。</h3>
-  <h4>"ヒント"　イメージに近い単語（類語）、イメージの特徴</h4>
-  <%= search_form_for @q, url: search_path do |f| %>
-    <%= search_field_tag "q[reminiscent_word_matches_all]" %>
-    <br>
-    <div class="text_align_right">
-      <button><%= f.submit '検索' %></button>
-    </div>
-  <% end %>
+  <div class="top_content">
+    <h1>連想ワードで検索する</h1>
+    <h3>あなたが表現したいイメージから連想できる単語や文章を入力してしっくりくる言葉を探してみよう。</h3>
+    <p>(※解決済になった質問投稿に対する連想ワードのみ検索ができます。)</p>
+    <h4>"ヒント"　イメージに近い単語（類語）、イメージの特徴</h4>
+    <%= search_form_for @q, url: search_path do |f| %>
+      <%= search_field_tag "q[reminiscent_word_matches_all]" %>
+      <br>
+      <div class="text_align_right">
+        <button><%= f.submit '検索' %></button>
+      </div>
+    <% end %>
+  </div>
 
   <% if @search_word.present? %>
     <h3>しっくりくる言葉は見つかりましたか？</h3>
