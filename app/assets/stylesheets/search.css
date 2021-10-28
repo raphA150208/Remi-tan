@@ -65,14 +65,24 @@ form{
 }
 
 h3 {
-  margin-top: 75px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+h4{
+  color: #FFC947;
+  margin-bottom: 3px;
+  font-style: italic;
 }
 
 .results_list {
   margin-top: 48px;
 }
 
-p {
+.top_content p {
+  margin-top: -18px;
+}
+.main_content .answer_word p {
   width: 180px;
 }
 

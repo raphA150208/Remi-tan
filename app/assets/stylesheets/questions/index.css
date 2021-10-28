@@ -116,6 +116,12 @@ a {
   flex-wrap: wrap;
 }
 
+.reminiscent_word_title {
+  font-size: 14px;
+  margin-top: -6px;
+  margin-bottom: 1px;
+}
+
 .reminiscent_word_label {
   background-color: #3C5186;
   color: #ffffff;
