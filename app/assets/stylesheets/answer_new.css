@@ -100,14 +100,19 @@ label {
   border-radius: 3px;
 }
 
+h2 {
+  margin-left: 30px;
+}
 .divider {
  background-color: #000000;
  padding: 0.5px;
  margin-bottom: 10px;
+ margin-left: 30px;
 }
 
 .answer-area{
  margin-left: 30px;
+ width: 462px;
 }
 
 .answer {
@@ -137,7 +142,7 @@ label {
 }
 
 .comment {
- margin-top: 20px;
+ margin-top: 5px;
  display: flex;
  flex-direction: column;
 }
@@ -146,9 +151,11 @@ label {
  height: 70px;
 }
 
-/* .answer-comment{
- background-color: #E8F0F2;
-} */
+.answer-comment{
+ background-color: #EEEEEE;
+ padding: 10px 0 0 10px;
+ margin-bottom: 15px;
+}
 
 .comment button {
   height: 26px;
@@ -223,6 +230,3 @@ input[type="submit"] {
   margin-top: 23px;
 }
 
-.field{
-  margin-left: 30px;
-}

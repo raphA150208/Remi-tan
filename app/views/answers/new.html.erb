@@ -23,14 +23,12 @@
       </div>
     </div>
   </div>
-  <div class="answer-area">
-    <h2>回答一覧</h2>
-    <div class="divider"></div>
-    <div id="answers_area">
+  <h2>回答一覧</h2>
+  <div class="divider"></div>
+    <div class="answer-area">
       <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
       <%= render partial: 'answers/index', locals: { answers: @answers, question: @question } %>
+      <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+      <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
     </div>
-  </div>
-  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-  <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
 </div>

@@ -43,6 +43,9 @@ label {
  font-weight: bold;
 }
 
+#answers {
+  width: 553px;
+}
 #best_answer{
   font-size: 20px;
   margin-left: 17px;
@@ -175,6 +178,20 @@ a{
 
 .answer-comment{
   margin-bottom: 20px;
+  position: relative;
+}
+
+.background_grey {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 406px;
+  background-color: #EEEEEE;
+  z-index: -50;
+}
+
+.answer_index {
+ padding: 10px 0 0 10px;
 }
 
 .actions input{
