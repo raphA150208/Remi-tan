@@ -11,7 +11,7 @@
   <body>
     <header>
       <nav class="navbar navbar-default">
-          <p>Remi-tan</p>
+          <p><%= link_to 'Remi-tan', root_path %></p>
           <ul>
             <% if user_signed_in? %>
               <li><%= link_to "質問一覧", questions_path %></li>
