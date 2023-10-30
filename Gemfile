@@ -24,6 +24,10 @@ gem 'rails-i18n'
 gem 'faker'
 gem 'seed-fu'
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
