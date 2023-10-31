@@ -23,6 +23,7 @@ gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'faker'
 gem 'seed-fu'
+gem 'nokogiri', '>= 1.12.5'
 
 group :production do
   gem 'unicorn', '5.4.1'
