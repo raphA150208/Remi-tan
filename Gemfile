@@ -32,6 +32,7 @@ end
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'dotenv-rails'
   gem 'spring'
   gem 'rspec-rails'

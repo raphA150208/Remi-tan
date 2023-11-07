@@ -1,9 +1,9 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[ show edit update destroy ]
+  before_action :set_question, only: %i[show edit update destroy]
   before_action :authenticate_user!
   def index
     @questions = Question.all.order(created_at: :desc)
-    if  params[:search_status].present?
+    if params[:search_status].present?
       @questions = Question.search_status(params[:search_status])
     end
   end
@@ -42,7 +42,10 @@ class QuestionsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @question.update(question_params)
+      # 解決済の質問の場合は更新させない
+      if @question.status == 1
+        redirect_to @question, alert: '解決済みの質問は編集できません。'
+      elsif @question.update(question_params)
         format.html { redirect_to @question, notice: "質問投稿を編集しました" }
         format.json { render :show, status: :ok, location: @question }
       else
@@ -53,10 +56,15 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question.destroy
-    respond_to do |format|
-      format.html { redirect_to questions_url, notice: "質問投稿を削除しました" }
-      format.json { head :no_content }
+    # 解決済の質問の場合は削除させない
+    if @question.status == 1
+      redirect_to @question, alert: '解決済みの質問は削除できません。'
+    else
+      @question.destroy
+      respond_to do |format|
+        format.html { redirect_to questions_url, notice: "質問投稿を削除しました" }
+        format.json { head :no_content }
+      end
     end
   end
 
