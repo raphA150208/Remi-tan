@@ -47,18 +47,15 @@ label {
   width: fit-content;
 } */
 #best_answer{
-  /* font-size: 20px;
-  margin-left: 17px;
-  font-weight: 600;
-  font-style: italic;
-  color: #FFC947; */
-  background-color: #ffd700	; /* 背景色を変更 */
-  border-radius: 4px; /* 角丸にする */
-  padding: 3px 7px; /* パディングを調整 */
-  color: #ffffff; /* 文字色を白に変更 */
-  font-size: 1em; /* フォントサイズを調整 */
-  margin-right: 10px;
-}
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    font-size: 1em;
+  }
 
 .content {
  display: flex;
@@ -166,25 +163,20 @@ a{
   display: block;
 }
 
-.best_answer input {
-  appearance: none;
-  padding: 0;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 16px;
-  color: #ffffff;
-  width: 100%;
-  cursor: pointer;
+.best_answer_button {
+  padding: 10px 20px; /* パディングでテキストとボタンの境界を調整 */
+  background-color: #ffd700; /* ボタンの背景色 */
+  color: white; /* テキストの色 */
+  border: none; /* ボーダーを消す */
+  border-radius: 20px; /* 角を丸くする */
+  cursor: pointer; /* ホバー時にカーソルをポインターにする */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 影を付ける */
+  transition: background-color 0.3s; /* 背景色の変化にアニメーションをつける */
 }
 
-.best_answer button {
-  height: 29px;
-  width: 143px;
-  cursor: pointer;
-  border-radius: 3px;
-  background-color: #b0c4de;
-  margin-left: 17px;
+/* ボタンにマウスをホバーした時のスタイル */
+.best_answer_button:hover {
+  background-color: #cca700; /* ホバー時の背景色を暗くする */
 }
 
 .answer-comment{
