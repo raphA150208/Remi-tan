@@ -20,24 +20,13 @@ h1 {
 }
 
 .status_select_item input{
-  appearance: none;
-  padding: 0;
   border: none;
-  outline: none;
   background: transparent;
   cursor: pointer;
 }
 
 .input-group form{
   display: flex;
-}
-
-.input-group button{
-  height: 26px;
-  width: 75px;
-  background-color: #EFEFEF;
-  border-color: #EFEFEF;
-  border-radius: 3px;
 }
 
 a {
@@ -143,7 +132,7 @@ a {
 .detail_link_area {
   width: 80px;
   height: 100%;
-  /* justify-content: end; */
+  justify-content: end;
   display: flex;
   margin: 12px 0 0 20px;
 }
@@ -156,10 +145,7 @@ a {
 }
 
 .detail_link_area button{
-  background-color: #e0e0e0;
-  border: none;
   width: 70px;
-  border-radius: 3px;
 }
 .question_info_area {
   width: 22%;
@@ -167,3 +153,48 @@ a {
   font-size: 0.8em;
   margin-left: 10px;
 }
+
+/* ボタンの基本スタイルを設定 */
+.button{
+  height: 30px; /* プルダウンの高さに合わせます */
+  background-color: #dcdcdc; /* 指定された色を使用 */
+  border: none;
+  border-radius: 3px;
+  color: #333; /* ボタン内の文字色 */
+  margin: 0 5px; /* ボタン同士の余白 */
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1); /* 影を追加 */
+  font-family: inherit; /* フォント継承 */
+  font-size: 14px; /* フォントサイズ統一 */
+}
+.input-group button {
+  height: 30px; /* プルダウンの高さに合わせます */
+  background-color: #dcdcdc; /* 指定された色を使用 */
+  border: none;
+  border-radius: 3px;
+  color: #e0ffff; /* ボタン内の文字色 */
+  padding: 0 15px; /* テキストの余白 */
+  margin: 0 10px; /* ボタン同士の余白 */
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1); /* 影を追加 */
+  font-family: inherit; /* フォント継承 */
+  font-size: 14px; /* フォントサイズ統一 */
+}
+
+/* ボタンにホバーエフェクトを追加 */
+.button:hover, .input-group button:hover, .status_select_item button:hover {
+  background-color: #a9a9a9; /* ホバー時は明るい色 */
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2); /* 影を強調 */
+}
+
+/* プルダウンメニューのスタイル */
+.status_select {
+  height: 30px; /* 高さを統一 */
+  border: 1px solid #add8e6; /* 枠線も同じ色に */
+  border-radius: 3px;
+  /* 以下はブラウザの既定のデザインを取り除くスタイルがあれば継続して使用 */
+}
+
+/* その他の特定のスタイルが必要な場合は、ここに追加します。

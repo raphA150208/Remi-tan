@@ -21,7 +21,7 @@
         <% end %>
       </div>
       <div class="button-area">
-        <% if @question.user_id == current_user.id %>
+        <% if @question.user_id == current_user.id && @question.status != "解決済" %>
           <button><%= link_to '変更する', edit_question_path(@question) %></button>
           <button><%= link_to '削除する', @question, method: :delete, data: { confirm: '本当に削除しますか?' } %></button>
         <% end %>

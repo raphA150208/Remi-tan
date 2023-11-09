@@ -11,23 +11,21 @@
               <div class="candidate">
                 <label><%= answer_word.candidate %></label>
               </div>
-              <div class="best-answer-label">
+              <div class="best-answer-label" >
                 <% if current_user == @question.user && @question.status != "解決済" %>
-                  <%= form_with( model: answer_word, local: true, url: answer_word_path ) do |ba| %>
-                    <div class="best_answer">
-                      <%= ba.hidden_field :id, :value => answer_word.id %>
-                      <button><%= ba.submit 'ベストアンサー' %></button>
-                    </div>
+                  <%= form_with( model: answer_word, local: true, url: answer_word_path, class: "best_answer_form") do |ba| %>
+                    <%= ba.hidden_field :id, :value => answer_word.id %>
+                    <%= ba.submit 'ベストアンサーにする', class: "best_answer_button" %>
                   <% end %>
                 <% end %>
-                <% if answer_word.best_answer_flg == true %>
+                <% if answer_word.best_answer_flg == true && @question.status == "解決済" %>
                   <label id="best_answer">ベストアンサー</label>
                 <% end %>
               </div>
             </div>
           <% end %>
         </div>
-        <div class="comment-area">
+        <div class="comment-area" >
           <% if answer.comment.present? %>
             <label>コメント</label>
             <div class="comment-content-area">
@@ -39,7 +37,8 @@
         </div>
       </div>
       <div class="comment">
-        <% if current_user == answer.user && answer.comment.present? %>
+        <% if current_user == answer.user && answer.comment.present? && @question.status != "解決済" %>
+        <%# <% binding.pry %>
           <div class="answer_edit">
             <button><%= link_to "回答編集", edit_question_answer_path(question, answer), remote: true %></button>
             <button><%= link_to "回答削除", question_answer_path(answer.question_id, answer.id), method: :delete, remote: true,
