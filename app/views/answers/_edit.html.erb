@@ -15,12 +15,16 @@
       <%= render "answer_word_fields", f: aw %>
     <% end %>
     <div class="links">
-      <%= link_to_add_association "しっくりくる言葉を追加", form, :answer_words %>
+      <%# link_to_add_association "しっくりくる言葉を追加", form, :answer_words %>
+      <button><%= link_to_add_association "しっくりくる言葉を追加", form, :answer_words %></button>
     </div>
   </div>
   <div class="field">
-    <%= form.text_area :comment, id: "answer_comment_#{question.id}" %>
-    <%= form.label :comment %>
+    <div class="answer_comment">
+      <%= form.label :comment %>
+    </div>
+    <%= form.text_area :comment, id: "answer_comment_#{question.id}", class: "edit-comment" %>
+
   </div>
   <div class="actions">
     <%= form.submit '回答を編集する' %>

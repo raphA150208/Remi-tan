@@ -27,17 +27,17 @@ input {
   width: 400px;
 }
 
-.main_content a {
+/* .main_content a {
   color: #333;
   text-decoration: none;
   font-weight: 600;
   display: block;
-}
+} */
 
 .detail_link_info_area a {
-  color: #333;
+  color: #000000;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   display: block;
 }
 
@@ -67,6 +67,8 @@ textarea {
 
 .user_info_area * {
   margin: auto;
+  color: #000000;
+  text-decoration: none;
 }
 
 .history_area {
@@ -89,12 +91,17 @@ img {
 
 .user_info_area button {
   height: 30px;
-  width: 130px;
-  margin-top: 20px;
-  background-color: #EFEFEF;
-  border-color: #EFEFEF;
-  cursor: pointer;
+  width: 135px;
+  background-color: #dcdcdc;
+  border: none;
   border-radius: 3px;
+  color: #333;
+  margin-left: 15px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+  font-family: inherit;
+  font-size: 14px;
 }
 
 .tab-group {
@@ -161,6 +168,7 @@ ul {
   height: 100%;
   min-width: 100px;
   width: 14%;
+  margin-right: 10px;
 }
 
 .status_label {
@@ -236,11 +244,23 @@ ul {
 }
 
 .detail_link_info_area button {
-  background-color: #e0e0e0;
-  border: none;
+  height: 26px;
   width: 70px;
-  margin-right: 40px;
+  background-color: #dcdcdc;
+  border: none;
   border-radius: 3px;
+  color: #333;
+  margin-right: 20px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.user_info_area button:hover, .detail_link_info_area button:hover {
+  background-color: #a9a9a9; /* ホバー時は明るい色 */
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2); /* 影を強調 */
 }
 
 .detail_link_info_area p {
