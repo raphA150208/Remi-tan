@@ -6,7 +6,7 @@
   <div class="input-group">
     <%= form_with model: @question, method: :get, local: true do |form| %>
       <div class="status_select">
-        <%= form.select :search_status, Question.statuses.keys %>
+        <%= form.select :search_status, Question.statuses.keys, {}, { class: 'status_select' } %>
       </div>
       <div class="status_select_item">
         <button class="button"><%= form.submit '絞り込み', name: 'search' %></button>

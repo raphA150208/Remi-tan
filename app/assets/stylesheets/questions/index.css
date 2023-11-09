@@ -36,9 +36,32 @@ a {
   display: block;
 }
 
-.status_select {
-  width: 100px;
-  height: 30px;
+.status_select select {
+  height: 30px; /* ボタンの高さと同じ */
+  font-size: 14px; /* ボタンのフォントサイズと同じ */
+  font-family: inherit; /* ボタンのフォントファミリーを継承 */
+  /* 幅はコンテンツに合わせて自動調整するため width: auto; を設定する */
+  width: auto; /* 必要に応じて具体的な幅に設定する */
+  border: 1px solid #dcdcdc; /* ボタンのボーダーと同じ */
+  border-radius: 3px; /* ボタンのボーダーの丸みと同じ */
+  background-color: #ffffff; /* プルダウンの背景色は白に */
+  padding: 0 10px; /* テキストと境界の間の余白 */
+  margin-right: 10px; /* 右のボタンとの余白 */
+  -webkit-appearance: none; /* デフォルトのプルダウンスタイルを削除 */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* プルダウンメニューの選択肢のスタイル */
+.status_select option {
+  padding: 5px 0;
+}
+
+/* プルダウンメニューがフォーカスされたときのスタイル */
+.status_select:focus {
+  outline: none;
+  border-color: #a9a9a9;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .question_row {
@@ -188,13 +211,3 @@ a {
   background-color: #a9a9a9; /* ホバー時は明るい色 */
   box-shadow: 0 4px 5px rgba(0,0,0,0.2); /* 影を強調 */
 }
-
-/* プルダウンメニューのスタイル */
-.status_select {
-  height: 30px; /* 高さを統一 */
-  border: 1px solid #add8e6; /* 枠線も同じ色に */
-  border-radius: 3px;
-  /* 以下はブラウザの既定のデザインを取り除くスタイルがあれば継続して使用 */
-}
-
-/* その他の特定のスタイルが必要な場合は、ここに追加します。
