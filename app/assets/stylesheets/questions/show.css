@@ -100,10 +100,21 @@ label {
 .button-area button {
   height: 26px;
   width: 128px;
-  background-color: #EFEFEF;
-  border-color: #EFEFEF;
-  cursor: pointer;
+  background-color: #dcdcdc;
+  border: none;
   border-radius: 3px;
+  color: #333;
+  margin-left: 15px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.button-area button:hover {
+  background-color: #a9a9a9; /* ホバー時は明るい色 */
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2); /* 影を強調 */
 }
 
 .divider {

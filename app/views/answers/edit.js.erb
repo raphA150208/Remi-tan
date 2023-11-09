@@ -1,2 +1,32 @@
 $("#this_answer_<%= @answer.id %>").replaceWith("<%= j render 'answers/edit', question: @question, answer: @answer, answer_word: @answer_words %>");
 $("#notice").html("<%= j flash[:notice] %>");
+
+<%# // turbolinks:loadイベントを使用してページロード時にイベントハンドラーを設定 %>
+<%# document.addEventListener('turbolinks:load', function() {
+  document.querySelectorAll('.edit_answer_button').forEach(function(button) {
+    button.addEventListener('click', function() {
+      // 編集フォームのIDを取得して、そのフォームを非表示にする
+      var formToHide = document.getElementById("answer_form_new");
+      if (formToHide) {
+        formToHide.style.display = 'none';
+      }
+    });
+  });
+}); %>
+document.addEventListener('turbolinks:load', function() {
+  console.log('ページがロードされました。イベントリスナーを設定中...');
+
+  document.querySelectorAll('.edit_answer_button').forEach(function(button) {
+    console.log('イベントリスナーを設定します: ', button);
+    button.addEventListener('click', function() {
+      console.log('ボタンがクリックされました。');
+      var formToHide = document.getElementById("answer_form_new");
+      if (formToHide) {
+        console.log('フォームを非表示にします。');
+        formToHide.style.display = 'none';
+      } else {
+        console.log('非表示にすべきフォームが見つかりません。');
+      }
+    });
+  });
+});

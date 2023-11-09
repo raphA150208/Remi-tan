@@ -7,4 +7,8 @@ class Question < ApplicationRecord
   enum status: {回答受付中:0, 解決済:1}
   scope :search_status, -> (status) { where(status: status)}
   has_many :reminiscent_words_dictionaries
+
+  def answered_by?(user)
+    answers.where(user: user).exists?
+  end
 end

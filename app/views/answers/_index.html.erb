@@ -40,7 +40,7 @@
         <% if current_user == answer.user && answer.comment.present? && @question.status != "解決済" %>
         <%# <% binding.pry %>
           <div class="answer_edit">
-            <button><%= link_to "回答編集", edit_question_answer_path(question, answer), remote: true %></button>
+            <button class="edit_answer_button"><%= link_to "回答編集", edit_question_answer_path(question, answer), remote: true %></button>
             <button><%= link_to "回答削除", question_answer_path(answer.question_id, answer.id), method: :delete, remote: true,
                                           data: { confirm: "本当に削除しますか?"} %></button>
           </div>

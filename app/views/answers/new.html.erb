@@ -29,6 +29,12 @@
       <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
       <%= render partial: 'answers/index', locals: { answers: @answers, question: @question } %>
       <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-      <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
+      <%# <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
+      <% unless @question.answered_by?(current_user) %>
+        <div id="answer_form_<%= @answer.id || 'new' %>" class="new_answer_form_wrapper">
+          <%= render partial: 'answers/form', locals: { answer: @answer, question: @question } %>
+        </div>
+      <% end %>
+
     </div>
 </div>
