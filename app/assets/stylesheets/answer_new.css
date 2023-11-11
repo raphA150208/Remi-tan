@@ -86,7 +86,7 @@ label {
  margin-left: 20px;
 }
 
-.question-sub .button-area {
+.question-sub, .button-area {
  margin: 40px 0 0 40px;
  text-align: right;
 }
@@ -211,12 +211,12 @@ a{
   width: 70px;
 }
 
-.nested-fields button:hover, .links button:hover, .comment button:hover {
+button:hover, .nested-fields button:hover, .comment button:hover {
   background-color: #a9a9a9; /* ホバー時は明るい色 */
   box-shadow: 0 4px 5px rgba(0,0,0,0.2); /* 影を強調 */
 }
 
-.links button {
+button {
   height: 30px;
   background-color: #dcdcdc;
   border: none;
@@ -226,8 +226,8 @@ a{
   outline: none;
   box-shadow: 0 2px 3px rgba(0,0,0,0.1);
   font-family: inherit;
-  font-size: 13px;
-  width: 180px;
+  font-size: 14px;
+  width: 190px;
 }
 
 input[type="submit"] {

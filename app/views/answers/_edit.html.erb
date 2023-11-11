@@ -12,7 +12,7 @@
   <div class="field">
     <%= form.label "しっくりくる言葉候補", {class: 'answer-word'} %>
     <%= form.fields_for :answer_words do |aw|%>
-      <%= render "answer_word_fields", f: aw %>
+        <%= render "answer_word_fields", f: aw %>
     <% end %>
     <div class="links">
       <%# link_to_add_association "しっくりくる言葉を追加", form, :answer_words %>
