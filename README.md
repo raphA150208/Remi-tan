@@ -2,15 +2,19 @@
 
 ## 開発言語
 + Ruby2.6.5
-+ Rails5.2.5
++ Rails5.2.6
 
-## 就業Termの技術
+## ツール
 + devise
 + Ajax（コメント機能）
-
-## カリキュラム外の技術
 + ransack
 + cocoon
+
+## 本番環境
++ AWS（EC2/ACM/Route53/ALB）
++ PostgreSQL 14.8
++ Nginx 1.22.1
++ Unicorn 5.4.1
 
 ## 実行手順
 ```
